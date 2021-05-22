@@ -15,7 +15,7 @@ internal enum StoryboardScene {
   internal enum Main: StoryboardType {
     internal static let storyboardName = "Main"
 
-    internal static let initialScene = InitialSceneType<Driver.WKWebViewController>(storyboard: Main.self)
+    internal static let initialScene = InitialSceneType<UIKit.UINavigationController>(storyboard: Main.self)
 
     internal static let scanViewController = SceneType<Driver.ScanViewController>(storyboard: Main.self, identifier: "ScanViewController")
   }

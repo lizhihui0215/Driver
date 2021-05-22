@@ -48,7 +48,7 @@ class ScanViewController: BaseViewController {
         viewModel.startScanning().onSuccess { [weak self] _ in
             guard let self = self else { return }
             `self`.scanAnimationImageView.stopAnimation()
-            `self`.finishedButton.isEnabled = true
+            `self`.perform(segue: StoryboardSegue.Main.scanFinished)
         }.onFailure { _ in
             `self`.finishedButton.isEnabled = false
         }

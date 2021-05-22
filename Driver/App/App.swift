@@ -16,8 +16,8 @@ public final class App {
         static let defaultLanguage = "en"
         static let osName = "iOS"
         static let brand = "Apple"
-        static let wechatAppId = "wx63814cefffb6d135"
-        static let universalLinks = "a"
+        static let wechatAppId = "wx28958f871edd9da5"
+        static let universalLinks = "https://driver-1257348791.cos-website.ap-beijing.myqcloud.com"
         static let auroraAppId = "1a03d24feb41d9a7ef467de7"
         static let webURL = "https://driver-1257348791.cos.ap-beijing.myqcloud.com/index.html"
     }

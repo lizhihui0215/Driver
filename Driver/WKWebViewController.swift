@@ -21,6 +21,26 @@ class WKWebViewController: UIViewController {
         return preference
     }()
 
+    @IBAction func toScanTapped(_ sender: UIButton) {
+        perform(segue: StoryboardSegue.Main.toScan)
+    }
+
+    @IBAction func toJGLoginTapped(_ sender: UIButton) {
+        auth(.aurora)
+    }
+
+    @IBAction func toWXLoginTapped(_ sender: UIButton) {
+        auth(.wechat)
+    }
+
+    @IBAction func toBaiduMapTapped(_ sender: UIButton) {
+        UIApplication.shared.bdapp(location: (longitude: "String", laitude: "String"))
+    }
+
+    @IBAction func toGaodeMapTapped(_ sender: UIButton) {
+        UIApplication.shared.amap(poiname: "", poiid: "", lat: "", lon: "")
+    }
+
     lazy var configuration: WKWebViewConfiguration = {
         let configuration = WKWebViewConfiguration()
         configuration.preferences = preference
@@ -47,6 +67,15 @@ class WKWebViewController: UIViewController {
         wechatService?.delegate = self
         setupWKWebView()
         registerJavaScriptMethods()
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.destination {
+        case let destination as ScanViewController:
+            destination.viewModel = ScanViewModel()
+
+        default: super.prepare(for: segue, sender: sender)
+        }
     }
 
     private func setupWKWebView() {
@@ -105,13 +134,19 @@ extension WKWebViewController: WKScriptMessageHandler {
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         switch message.name {
         case JavaScript.Method.scan.name: break
-        case JavaScript.Method.tel.name: break
+        case JavaScript.Method.tel.name:
+            guard let phone = message.body as? String else { break }
+            UIApplication.shared.tel(phone: phone)
         case JavaScript.Method.scanSuccess.name: break
         case JavaScript.Aurora.Method.auth.name: break
         case JavaScript.Wechat.Method.auth.name: break
         default: break
         }
     }
+}
+
+extension WKWebViewController {
+    @IBAction func unwindFromScan(sender: UIStoryboardSegue) {}
 }
 
 extension WKWebViewController: WKUIDelegate {}

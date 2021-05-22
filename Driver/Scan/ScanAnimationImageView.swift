@@ -19,12 +19,10 @@ class ScanAnimationImageView: UIImageView {
     }
 
     @objc func stepAnimation() {
-        guard isInAnimating else {
-            return
-        }
+        guard isInAnimating else { return }
         var frame = self.frame
 
-        let hImg = image!.size.height * frame.width / image!.size.width
+        let hImg = image!.size.height
 
         frame.origin.y -= hImg
         frame.size.height = hImg
@@ -36,7 +34,7 @@ class ScanAnimationImageView: UIImageView {
             self.alpha = 1.0
 
             var frame = self.bounds
-            let hImg = self.image!.size.height * frame.width / self.image!.size.width
+            let hImg = self.image!.size.height
 
             frame.origin.y += (frame.size.height - hImg)
             frame.size.height = hImg
