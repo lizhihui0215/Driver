@@ -61,4 +61,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
         services.forEach { $0.sceneDidEnterBackground?(scene) }
     }
+
+    func scene(_ scene: UIScene, continue userActivity: NSUserActivity) {
+        services.forEach { $0.scene?(scene, continue: userActivity) }
+    }
 }

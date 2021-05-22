@@ -4,6 +4,7 @@
 //
 
 import Foundation
+import UIKit
 
 class AppStartupService: NSObject, AppService {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {

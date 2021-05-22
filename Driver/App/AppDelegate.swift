@@ -14,6 +14,8 @@ class AppDelegate: AppServiceManager {
         [
             WindowService(window: window),
             AppStartupService(),
+            WechatService(),
+            AuroraService(),
         ]
     }
 }

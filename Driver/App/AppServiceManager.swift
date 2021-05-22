@@ -35,6 +35,18 @@ class AppServiceManager: UIResponder, UIApplicationDelegate {
         }
     }
 
+    func application(_ application: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
+        _services.allSatisfy {
+            ($0.application?(application, open: url, options: options) ?? true)
+        }
+    }
+
+    func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
+        _services.allSatisfy {
+            ($0.application?(application, continue: userActivity, restorationHandler: restorationHandler) ?? true)
+        }
+    }
+
     // MARK: UISceneSession Lifecycle
 
     @available(iOS 13.0, *)

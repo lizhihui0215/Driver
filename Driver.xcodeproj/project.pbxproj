@@ -3,14 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		262672062659006C00F5DED3 /* Javascript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262672052659006C00F5DED3 /* Javascript.swift */; };
 		2627CD8A26575B9D00DC2C6D /* WKWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2627CD8926575B9D00DC2C6D /* WKWebViewController.swift */; };
 		2627CD8D26575B9D00DC2C6D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2627CD8B26575B9D00DC2C6D /* Main.storyboard */; };
 		2627CD8F26575BA100DC2C6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2627CD8E26575BA100DC2C6D /* Assets.xcassets */; };
-		2627CD9226575BA100DC2C6D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2627CD9026575BA100DC2C6D /* LaunchScreen.storyboard */; };
 		2627CD9D26575BA100DC2C6D /* DriverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2627CD9C26575BA100DC2C6D /* DriverTests.swift */; };
 		2627CDA826575BA100DC2C6D /* DriverUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2627CDA726575BA100DC2C6D /* DriverUITests.swift */; };
 		2627CDBA26575ECD00DC2C6D /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2627CDB626575ECD00DC2C6D /* Appearance.swift */; };
@@ -22,6 +22,28 @@
 		2627CDC526575EEA00DC2C6D /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2627CDC126575EEA00DC2C6D /* App.swift */; };
 		2627CDC626575EEA00DC2C6D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2627CDC226575EEA00DC2C6D /* SceneDelegate.swift */; };
 		2627CDC826575F3B00DC2C6D /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2627CDC726575F3B00DC2C6D /* Cache.swift */; };
+		2627CDCA26577C4D00DC2C6D /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2627CDC926577C4D00DC2C6D /* Colors.xcassets */; };
+		2627CDCF26577D7000DC2C6D /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2627CDCE26577D6A00DC2C6D /* Bundle+Extension.swift */; };
+		2627CDD126577DB100DC2C6D /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2627CDD026577DB100DC2C6D /* Device.swift */; };
+		2627CDD326577DEB00DC2C6D /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2627CDD226577DEB00DC2C6D /* UIApplication+Extension.swift */; };
+		2627CDD526577E0400DC2C6D /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2627CDD426577E0400DC2C6D /* Keys.swift */; };
+		2627CDDD2657868400DC2C6D /* IB-Segues+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2627CDDA2657868400DC2C6D /* IB-Segues+Generated.swift */; };
+		2627CDDE2657868400DC2C6D /* XCAssets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2627CDDB2657868400DC2C6D /* XCAssets+Generated.swift */; };
+		2627CDDF2657868400DC2C6D /* IB-Scenes+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2627CDDC2657868400DC2C6D /* IB-Scenes+Generated.swift */; };
+		262CEA872657DAAB004E7588 /* GIFHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262CEA862657DAAA004E7588 /* GIFHUD.swift */; };
+		267EA93D265799C700A3BB2D /* WechatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267EA93C265799C700A3BB2D /* WechatService.swift */; };
+		267EA93F265799DD00A3BB2D /* AuroraService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267EA93E265799DD00A3BB2D /* AuroraService.swift */; };
+		267EA9422657B8E300A3BB2D /* car_loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = 267EA9412657B8E300A3BB2D /* car_loading.gif */; };
+		267EA9452657BE1400A3BB2D /* LayoutHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267EA9432657BE1300A3BB2D /* LayoutHelpers.swift */; };
+		267EA9462657BE1400A3BB2D /* LayoutOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267EA9442657BE1400A3BB2D /* LayoutOperator.swift */; };
+		26D38D352657FA610060E7F2 /* ScanCornerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D38D332657FA600060E7F2 /* ScanCornerView.swift */; };
+		26D38D362657FA610060E7F2 /* ScanAnimationImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D38D342657FA610060E7F2 /* ScanAnimationImageView.swift */; };
+		26D38D382657FA690060E7F2 /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D38D372657FA690060E7F2 /* ScanViewController.swift */; };
+		26D38D3A2657FA710060E7F2 /* ScanService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D38D392657FA710060E7F2 /* ScanService.swift */; };
+		26D38D3C2657FA7E0060E7F2 /* scan.wav in Resources */ = {isa = PBXBuildFile; fileRef = 26D38D3B2657FA7E0060E7F2 /* scan.wav */; };
+		26D38D3E265800490060E7F2 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D38D3D265800490060E7F2 /* BaseViewController.swift */; };
+		26D38D40265800720060E7F2 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D38D3F265800720060E7F2 /* UIViewController+Extension.swift */; };
+		26D38D42265800BF0060E7F2 /* ScanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D38D41265800BF0060E7F2 /* ScanViewModel.swift */; };
 		2B3E0FD79D84B991A92AC80A /* Pods_Driver_DriverUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75D85420A6BB4C1AB3B56224 /* Pods_Driver_DriverUITests.framework */; };
 		B192BA4F01FE27C99D690962 /* Pods_Driver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78F7B1829125D1CC3E160622 /* Pods_Driver.framework */; };
 		CFC98121E8AD05EC69D8B44B /* Pods_DriverTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62F7D9FBD1B924CF145F6D8E /* Pods_DriverTests.framework */; };
@@ -48,11 +70,11 @@
 		02BFB3E84C1A401C80CF19F9 /* Pods-DriverTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DriverTests.debug.xcconfig"; path = "Target Support Files/Pods-DriverTests/Pods-DriverTests.debug.xcconfig"; sourceTree = "<group>"; };
 		03828C638324E97FE2CC3109 /* Pods-Driver-DriverUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Driver-DriverUITests.debug.xcconfig"; path = "Target Support Files/Pods-Driver-DriverUITests/Pods-Driver-DriverUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		15CA4C88121196485106CEB1 /* Pods-Driver.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Driver.release.xcconfig"; path = "Target Support Files/Pods-Driver/Pods-Driver.release.xcconfig"; sourceTree = "<group>"; };
+		262672052659006C00F5DED3 /* Javascript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Javascript.swift; sourceTree = "<group>"; };
 		2627CD8226575B9D00DC2C6D /* Driver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Driver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2627CD8926575B9D00DC2C6D /* WKWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKWebViewController.swift; sourceTree = "<group>"; };
 		2627CD8C26575B9D00DC2C6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2627CD8E26575BA100DC2C6D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		2627CD9126575BA100DC2C6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2627CD9326575BA100DC2C6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2627CD9826575BA100DC2C6D /* DriverTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DriverTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2627CD9C26575BA100DC2C6D /* DriverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverTests.swift; sourceTree = "<group>"; };
@@ -69,6 +91,30 @@
 		2627CDC126575EEA00DC2C6D /* App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		2627CDC226575EEA00DC2C6D /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		2627CDC726575F3B00DC2C6D /* Cache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
+		2627CDC926577C4D00DC2C6D /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		2627CDCE26577D6A00DC2C6D /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
+		2627CDD026577DB100DC2C6D /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		2627CDD226577DEB00DC2C6D /* UIApplication+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
+		2627CDD426577E0400DC2C6D /* Keys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
+		2627CDD6265780E000DC2C6D /* Driver.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Driver.entitlements; sourceTree = "<group>"; };
+		2627CDDA2657868400DC2C6D /* IB-Segues+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IB-Segues+Generated.swift"; sourceTree = "<group>"; };
+		2627CDDB2657868400DC2C6D /* XCAssets+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCAssets+Generated.swift"; sourceTree = "<group>"; };
+		2627CDDC2657868400DC2C6D /* IB-Scenes+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IB-Scenes+Generated.swift"; sourceTree = "<group>"; };
+		2627CDE02657877500DC2C6D /* Driver-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Driver-Bridging-Header.h"; sourceTree = "<group>"; };
+		262CEA862657DAAA004E7588 /* GIFHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIFHUD.swift; sourceTree = "<group>"; };
+		267EA93C265799C700A3BB2D /* WechatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WechatService.swift; sourceTree = "<group>"; };
+		267EA93E265799DD00A3BB2D /* AuroraService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuroraService.swift; sourceTree = "<group>"; };
+		267EA9412657B8E300A3BB2D /* car_loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = car_loading.gif; sourceTree = "<group>"; };
+		267EA9432657BE1300A3BB2D /* LayoutHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutHelpers.swift; sourceTree = "<group>"; };
+		267EA9442657BE1400A3BB2D /* LayoutOperator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutOperator.swift; sourceTree = "<group>"; };
+		26D38D332657FA600060E7F2 /* ScanCornerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanCornerView.swift; sourceTree = "<group>"; };
+		26D38D342657FA610060E7F2 /* ScanAnimationImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanAnimationImageView.swift; sourceTree = "<group>"; };
+		26D38D372657FA690060E7F2 /* ScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
+		26D38D392657FA710060E7F2 /* ScanService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanService.swift; sourceTree = "<group>"; };
+		26D38D3B2657FA7E0060E7F2 /* scan.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = scan.wav; sourceTree = "<group>"; };
+		26D38D3D265800490060E7F2 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		26D38D3F265800720060E7F2 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		26D38D41265800BF0060E7F2 /* ScanViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanViewModel.swift; sourceTree = "<group>"; };
 		3085E4A9EE7A8F97A4EAD3E5 /* Pods-DriverTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DriverTests.release.xcconfig"; path = "Target Support Files/Pods-DriverTests/Pods-DriverTests.release.xcconfig"; sourceTree = "<group>"; };
 		62F7D9FBD1B924CF145F6D8E /* Pods_DriverTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DriverTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		75D85420A6BB4C1AB3B56224 /* Pods_Driver_DriverUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Driver_DriverUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,6 +151,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		262672042659003100F5DED3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				262672052659006C00F5DED3 /* Javascript.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		2627CD7926575B9D00DC2C6D = {
 			isa = PBXGroup;
 			children = (
@@ -130,12 +184,21 @@
 		2627CD8426575B9D00DC2C6D /* Driver */ = {
 			isa = PBXGroup;
 			children = (
+				2627CDD6265780E000DC2C6D /* Driver.entitlements */,
+				26D38D322657FA550060E7F2 /* Scan */,
+				2627CDD92657868400DC2C6D /* SwiftGenerated */,
+				2627CDCD26577D5D00DC2C6D /* Extensions */,
 				2627CDBE26575EEA00DC2C6D /* App */,
 				2627CDB526575E9600DC2C6D /* Service */,
+				262672042659003100F5DED3 /* Models */,
+				26D38D3D265800490060E7F2 /* BaseViewController.swift */,
 				2627CD8926575B9D00DC2C6D /* WKWebViewController.swift */,
+				262CEA862657DAAA004E7588 /* GIFHUD.swift */,
 				2627CD8B26575B9D00DC2C6D /* Main.storyboard */,
 				2627CD8E26575BA100DC2C6D /* Assets.xcassets */,
-				2627CD9026575BA100DC2C6D /* LaunchScreen.storyboard */,
+				2627CDC926577C4D00DC2C6D /* Colors.xcassets */,
+				267EA9402657B8C900A3BB2D /* Resources */,
+				2627CDE02657877500DC2C6D /* Driver-Bridging-Header.h */,
 				2627CD9326575BA100DC2C6D /* Info.plist */,
 			);
 			path = Driver;
@@ -162,8 +225,12 @@
 		2627CDB526575E9600DC2C6D /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				26D38D392657FA710060E7F2 /* ScanService.swift */,
+				2627CDD026577DB100DC2C6D /* Device.swift */,
 				2627CDC726575F3B00DC2C6D /* Cache.swift */,
 				2627CDB626575ECD00DC2C6D /* Appearance.swift */,
+				267EA93C265799C700A3BB2D /* WechatService.swift */,
+				267EA93E265799DD00A3BB2D /* AuroraService.swift */,
 				2627CDB926575ECD00DC2C6D /* AppStartupService.swift */,
 				2627CDB826575ECD00DC2C6D /* LoggerService.swift */,
 				2627CDB726575ECD00DC2C6D /* WindowService.swift */,
@@ -174,12 +241,55 @@
 		2627CDBE26575EEA00DC2C6D /* App */ = {
 			isa = PBXGroup;
 			children = (
+				2627CDD426577E0400DC2C6D /* Keys.swift */,
 				2627CDBF26575EEA00DC2C6D /* AppServiceManager.swift */,
 				2627CDC026575EEA00DC2C6D /* AppDelegate.swift */,
 				2627CDC126575EEA00DC2C6D /* App.swift */,
 				2627CDC226575EEA00DC2C6D /* SceneDelegate.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		2627CDCD26577D5D00DC2C6D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				26D38D3F265800720060E7F2 /* UIViewController+Extension.swift */,
+				267EA9432657BE1300A3BB2D /* LayoutHelpers.swift */,
+				267EA9442657BE1400A3BB2D /* LayoutOperator.swift */,
+				2627CDD226577DEB00DC2C6D /* UIApplication+Extension.swift */,
+				2627CDCE26577D6A00DC2C6D /* Bundle+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		2627CDD92657868400DC2C6D /* SwiftGenerated */ = {
+			isa = PBXGroup;
+			children = (
+				2627CDDA2657868400DC2C6D /* IB-Segues+Generated.swift */,
+				2627CDDB2657868400DC2C6D /* XCAssets+Generated.swift */,
+				2627CDDC2657868400DC2C6D /* IB-Scenes+Generated.swift */,
+			);
+			path = SwiftGenerated;
+			sourceTree = "<group>";
+		};
+		267EA9402657B8C900A3BB2D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				26D38D3B2657FA7E0060E7F2 /* scan.wav */,
+				267EA9412657B8E300A3BB2D /* car_loading.gif */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		26D38D322657FA550060E7F2 /* Scan */ = {
+			isa = PBXGroup;
+			children = (
+				26D38D41265800BF0060E7F2 /* ScanViewModel.swift */,
+				26D38D372657FA690060E7F2 /* ScanViewController.swift */,
+				26D38D342657FA610060E7F2 /* ScanAnimationImageView.swift */,
+				26D38D332657FA600060E7F2 /* ScanCornerView.swift */,
+			);
+			path = Scan;
 			sourceTree = "<group>";
 		};
 		3CC4EC458079228242AC961A /* Frameworks */ = {
@@ -202,7 +312,6 @@
 				02BFB3E84C1A401C80CF19F9 /* Pods-DriverTests.debug.xcconfig */,
 				3085E4A9EE7A8F97A4EAD3E5 /* Pods-DriverTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -218,6 +327,8 @@
 				2627CD7F26575B9D00DC2C6D /* Frameworks */,
 				2627CD8026575B9D00DC2C6D /* Resources */,
 				95463CA098C7EC4BC600B78D /* [CP] Embed Pods Frameworks */,
+				2627CDD7265783C200DC2C6D /* Format Code */,
+				2627CDD8265783EC00DC2C6D /* swiftgen */,
 			);
 			buildRules = (
 			);
@@ -314,7 +425,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2627CD9226575BA100DC2C6D /* LaunchScreen.storyboard in Resources */,
+				267EA9422657B8E300A3BB2D /* car_loading.gif in Resources */,
+				2627CDCA26577C4D00DC2C6D /* Colors.xcassets in Resources */,
+				26D38D3C2657FA7E0060E7F2 /* scan.wav in Resources */,
 				2627CD8F26575BA100DC2C6D /* Assets.xcassets in Resources */,
 				2627CD8D26575B9D00DC2C6D /* Main.storyboard in Resources */,
 			);
@@ -358,6 +471,42 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		2627CDD7265783C200DC2C6D /* Format Code */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Format Code";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "bin/scripts/format-code.sh Driver\n";
+		};
+		2627CDD8265783EC00DC2C6D /* swiftgen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = swiftgen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "bin/scripts/swiftgen.sh\n";
 		};
 		80E0C552D85619F44E9FA045 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -444,16 +593,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2627CDDF2657868400DC2C6D /* IB-Scenes+Generated.swift in Sources */,
 				2627CDBB26575ECD00DC2C6D /* WindowService.swift in Sources */,
+				26D38D362657FA610060E7F2 /* ScanAnimationImageView.swift in Sources */,
+				262CEA872657DAAB004E7588 /* GIFHUD.swift in Sources */,
+				26D38D40265800720060E7F2 /* UIViewController+Extension.swift in Sources */,
 				2627CD8A26575B9D00DC2C6D /* WKWebViewController.swift in Sources */,
+				26D38D3E265800490060E7F2 /* BaseViewController.swift in Sources */,
 				2627CDC526575EEA00DC2C6D /* App.swift in Sources */,
+				2627CDD126577DB100DC2C6D /* Device.swift in Sources */,
+				2627CDCF26577D7000DC2C6D /* Bundle+Extension.swift in Sources */,
 				2627CDC426575EEA00DC2C6D /* AppDelegate.swift in Sources */,
+				267EA9462657BE1400A3BB2D /* LayoutOperator.swift in Sources */,
 				2627CDBD26575ECD00DC2C6D /* AppStartupService.swift in Sources */,
+				267EA93F265799DD00A3BB2D /* AuroraService.swift in Sources */,
+				262672062659006C00F5DED3 /* Javascript.swift in Sources */,
+				26D38D382657FA690060E7F2 /* ScanViewController.swift in Sources */,
 				2627CDC626575EEA00DC2C6D /* SceneDelegate.swift in Sources */,
 				2627CDBA26575ECD00DC2C6D /* Appearance.swift in Sources */,
+				267EA9452657BE1400A3BB2D /* LayoutHelpers.swift in Sources */,
 				2627CDBC26575ECD00DC2C6D /* LoggerService.swift in Sources */,
+				2627CDDD2657868400DC2C6D /* IB-Segues+Generated.swift in Sources */,
+				2627CDDE2657868400DC2C6D /* XCAssets+Generated.swift in Sources */,
+				267EA93D265799C700A3BB2D /* WechatService.swift in Sources */,
+				26D38D3A2657FA710060E7F2 /* ScanService.swift in Sources */,
+				26D38D42265800BF0060E7F2 /* ScanViewModel.swift in Sources */,
+				26D38D352657FA610060E7F2 /* ScanCornerView.swift in Sources */,
 				2627CDC826575F3B00DC2C6D /* Cache.swift in Sources */,
+				2627CDD526577E0400DC2C6D /* Keys.swift in Sources */,
 				2627CDC326575EEA00DC2C6D /* AppServiceManager.swift in Sources */,
+				2627CDD326577DEB00DC2C6D /* UIApplication+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -495,14 +664,6 @@
 				2627CD8C26575B9D00DC2C6D /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		2627CD9026575BA100DC2C6D /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2627CD9126575BA100DC2C6D /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -559,7 +720,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -614,7 +775,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -630,6 +791,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = Driver/Driver.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5SUA6AM43M;
 				INFOPLIST_FILE = Driver/Info.plist;
@@ -640,6 +803,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.dmd56.driver.Driver;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_GEN_INPUT = Driver;
+				SWIFT_OBJC_BRIDGING_HEADER = "Driver/Driver-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -651,6 +816,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = Driver/Driver.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5SUA6AM43M;
 				INFOPLIST_FILE = Driver/Info.plist;
@@ -661,6 +828,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.dmd56.driver.Driver;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_GEN_INPUT = Driver;
+				SWIFT_OBJC_BRIDGING_HEADER = "Driver/Driver-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -670,7 +839,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 02BFB3E84C1A401C80CF19F9 /* Pods-DriverTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5SUA6AM43M;
@@ -693,7 +862,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3085E4A9EE7A8F97A4EAD3E5 /* Pods-DriverTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5SUA6AM43M;
@@ -716,7 +885,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 03828C638324E97FE2CC3109 /* Pods-Driver-DriverUITests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5SUA6AM43M;
 				INFOPLIST_FILE = DriverUITests/Info.plist;
@@ -737,7 +906,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DA8A5BC09346C83BA6C6AC5E /* Pods-Driver-DriverUITests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5SUA6AM43M;
 				INFOPLIST_FILE = DriverUITests/Info.plist;

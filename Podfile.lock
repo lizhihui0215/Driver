@@ -1,16 +1,54 @@
 PODS:
+  - Alamofire (5.4.3)
+  - BrightFutures (8.0.0)
+  - Gifu (3.3)
+  - JCore (2.6.2)
+  - JVerification (2.7.1):
+    - JCore (< 6.0.0, >= 2.1.6)
+  - PKHUD (5.3.0)
+  - Swiftstraints (5.0.0)
   - SwiftyBeaver (1.9.5)
+  - WechatOpenSDK (1.8.7.1)
+  - ZLPhotoBrowser (4.1.5):
+    - ZLPhotoBrowser/Core (= 4.1.5)
+  - ZLPhotoBrowser/Core (4.1.5)
 
 DEPENDENCIES:
+  - Alamofire
+  - BrightFutures
+  - Gifu
+  - JVerification
+  - PKHUD
+  - Swiftstraints
   - SwiftyBeaver
+  - WechatOpenSDK
+  - ZLPhotoBrowser
 
 SPEC REPOS:
   trunk:
+    - Alamofire
+    - BrightFutures
+    - Gifu
+    - JCore
+    - JVerification
+    - PKHUD
+    - Swiftstraints
     - SwiftyBeaver
+    - WechatOpenSDK
+    - ZLPhotoBrowser
 
 SPEC CHECKSUMS:
+  Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
+  BrightFutures: f8427b46feabaf73c5e71ace7d86d65dfbb47696
+  Gifu: 97c2a3c3865fbc834ab13f797e2e8e7729a1853c
+  JCore: 0cb4fc5892bc97af4f27283875369ead3eaa3067
+  JVerification: 750dc6b4ce55e53d1095958267cfd2e9eb4398a1
+  PKHUD: 98f3e4bc904b9c916f1c5bb6d765365b5357291b
+  Swiftstraints: c684ff20ef5403e1a1e1967e1f30ffc11f353144
   SwiftyBeaver: 84069991dd5dca07d7069100985badaca7f0ce82
+  WechatOpenSDK: 6a4d1436c15b3b5fe2a0bd383f3046010186da44
+  ZLPhotoBrowser: 809878607ea92e9411c580797ce1be23896b8d7f
 
-PODFILE CHECKSUM: 03534a9672c110c5dd0e8ff1aba5cc7e56c3b0c6
+PODFILE CHECKSUM: 24a2554e9be176542dd95396ee035ff65b895e92
 
 COCOAPODS: 1.10.1

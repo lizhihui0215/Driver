@@ -1,0 +1,25 @@
+disabled_rules:
+  - unused_setter_value
+  - type_name
+  - identifier_name
+  - line_length
+  - todo
+  - opening_brace
+  - notification_center_detachment
+  - cyclomatic_complexity
+  - trailing_comma
+  - operator_whitespace
+  - file_length
+  - type_body_length
+  - function_body_length
+  - nesting
+  - unused_closure_parameter
+  - large_tuple
+  - multiple_closures_with_trailing_closure
+  - private_over_fileprivate
+excluded:
+  - Assets/SourceryGenerated
+opt_in_rules:
+  - trailing_closure
+force_cast: warning
+force_try: warning

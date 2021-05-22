@@ -4,6 +4,7 @@
 //
 
 import Foundation
+import UIKit
 
 class Appearance {
     public static let shared = Appearance()
@@ -41,5 +42,4 @@ class Appearance {
         UINavigationBar.appearance().titleTextAttributes = TitleTextAttributes.navigationBar.attributes
         UINavigationBar.appearance().tintColor = TintColor.navigationBar.color
     }
-
 }
