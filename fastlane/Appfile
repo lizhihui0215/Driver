@@ -1,0 +1,8 @@
+app_identifier("com.dmdkj.driver") # The bundle identifier of your app
+apple_id("it@dmdkj.com") # Your Apple email address
+
+itc_team_id("122500707") # App Store Connect Team ID
+team_id("5SUA6AM43M") # Developer Portal Team ID
+
+# For more information about the Appfile, see:
+#     https://docs.fastlane.tools/advanced/#appfile

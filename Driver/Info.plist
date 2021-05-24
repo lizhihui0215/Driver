@@ -32,7 +32,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>2</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>weixin</string>
@@ -51,6 +51,12 @@
 	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>需要访问您的相机,以便于您能正常使用扫一扫扫描识别条码或者二维码,或者拍摄照片上传照片等功能</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>需要获取您的位置信息,以便于给您推荐您附近位置的加油站信息</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>需要访问您的相册,以便于您能够选取照片上传照片,保存照片等功能</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>需要访问您的相册,以便于您能够选取照片上传照片,保存照片等功能</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
