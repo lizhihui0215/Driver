@@ -22,6 +22,18 @@ internal typealias AssetImageTypeAlias = ImageAsset.Image
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
 internal enum XCAssets {
   internal enum Assets {
+    internal enum Aurora {
+      internal static let checkBoxSelected = ImageAsset(name: "checkBox_selected")
+      internal static let checkBoxUnSelected = ImageAsset(name: "checkBox_unSelected")
+      internal static let close = ImageAsset(name: "close")
+      internal static let cmccLogo = ImageAsset(name: "cmccLogo")
+      internal static let ctccLogo = ImageAsset(name: "ctccLogo")
+      internal static let cuccLogo = ImageAsset(name: "cuccLogo")
+      internal static let loginBtnDis = ImageAsset(name: "loginBtn_Dis")
+      internal static let loginBtnHig = ImageAsset(name: "loginBtn_Hig")
+      internal static let loginBtnNor = ImageAsset(name: "loginBtn_Nor")
+      internal static let windowClose = ImageAsset(name: "windowClose")
+    }
     internal enum Hud {
       internal static let netError = ImageAsset(name: "net_error")
     }

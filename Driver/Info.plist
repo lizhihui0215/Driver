@@ -27,7 +27,7 @@
 			<string>weixin</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>wx63814cefffb6d135</string>
+				<string>wx28958f871edd9da5</string>
 			</array>
 		</dict>
 	</array>
@@ -42,6 +42,13 @@
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+		<key>NSAllowsArbitraryLoadsUsageDescription</key>
+		<dict/>
+	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>需要访问您的相机,以便于您能正常使用扫一扫扫描识别条码或者二维码,或者拍摄照片上传照片等功能</string>
 	<key>UIApplicationSceneManifest</key>

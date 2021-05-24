@@ -34,11 +34,11 @@ class WKWebViewController: UIViewController {
     }
 
     @IBAction func toBaiduMapTapped(_ sender: UIButton) {
-        UIApplication.shared.bdapp(location: (longitude: "String", laitude: "String"))
+//        UIApplication.shared.bdapp(location: (longitude: "String", laitude: "String"))
     }
 
     @IBAction func toGaodeMapTapped(_ sender: UIButton) {
-        UIApplication.shared.amap(poiname: "", poiid: "", lat: "", lon: "")
+//        UIApplication.shared.amap(poiname: "", poiid: "", lat: "", lon: "")
     }
 
     lazy var configuration: WKWebViewConfiguration = {
@@ -62,11 +62,25 @@ class WKWebViewController: UIViewController {
         UIApplication.shared.service()
     }
 
+    // 全屏模式
+    func setupAuroraAuthrizationPage() {
+        let auroraAuthUIConfiguration = AurorUIFactory.makeUIConfiguration()
+        JVERIFICATIONService.customUI(with: auroraAuthUIConfiguration) { _ in
+            // 自定义view, 加到customView上
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         wechatService?.delegate = self
-        setupWKWebView()
         registerJavaScriptMethods()
+        setupWKWebView()
+        setupAuroraAuthrizationPage()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = true
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -88,65 +102,61 @@ class WKWebViewController: UIViewController {
     }
 
     private func registerJavaScriptMethods() {
-        add(self, method: .scan)
-        add(self, method: .tel)
+        add(self, system: .scan)
+        add(self, system: .tel)
         add(self, aurora: .auth)
         add(self, wechat: .auth)
+        add(self, system: .pasteBoard)
+        add(self, system: .pasteBoardResponse)
+        add(self, map: .baidu)
+        add(self, map: .amap)
     }
 
     private func removeJavascriptMethods() {
-        removeScriptMessageHandler(method: .scan)
-        removeScriptMessageHandler(method: .tel)
+        removeScriptMessageHandler(system: .scan)
+        removeScriptMessageHandler(system: .tel)
+        removeScriptMessageHandler(system: .pasteBoardResponse)
         removeScriptMessageHandler(aurora: .auth)
         removeScriptMessageHandler(wechat: .auth)
+        removeScriptMessageHandler(map: .baidu)
+        removeScriptMessageHandler(map: .amap)
     }
 
-    func add(_ scriptMessageHandler: WKScriptMessageHandler, method: JavaScript.Method) {
-        userContentController.add(self, name: method.name)
+    func add(_ scriptMessageHandler: WKScriptMessageHandler, system method: JavaScript.System.Method) {
+        webView.configuration.userContentController.add(self, name: method.name)
     }
 
     func add(_ scriptMessageHandler: WKScriptMessageHandler, wechat method: JavaScript.Wechat.Method) {
-        userContentController.add(self, name: method.name)
+        webView.configuration.userContentController.add(self, name: method.name)
     }
 
     func add(_ scriptMessageHandler: WKScriptMessageHandler, aurora method: JavaScript.Aurora.Method) {
-        userContentController.add(self, name: method.name)
+        webView.configuration.userContentController.add(self, name: method.name)
     }
 
-    func removeScriptMessageHandler(method: JavaScript.Method) {
-        userContentController.removeScriptMessageHandler(forName: method.name)
+    func add(_ scriptMessageHandler: WKScriptMessageHandler, map method: JavaScript.Map.Method) {
+        webView.configuration.userContentController.add(self, name: method.name)
+    }
+
+    func removeScriptMessageHandler(map method: JavaScript.Map.Method) {
+        webView.configuration.userContentController.removeScriptMessageHandler(forName: method.name)
+    }
+
+    func removeScriptMessageHandler(system method: JavaScript.System.Method) {
+        webView.configuration.userContentController.removeScriptMessageHandler(forName: method.name)
     }
 
     func removeScriptMessageHandler(wechat: JavaScript.Wechat.Method) {
-        userContentController.removeScriptMessageHandler(forName: wechat.name)
+        webView.configuration.userContentController.removeScriptMessageHandler(forName: wechat.name)
     }
 
     func removeScriptMessageHandler(aurora: JavaScript.Aurora.Method) {
-        userContentController.removeScriptMessageHandler(forName: aurora.name)
+        webView.configuration.userContentController.removeScriptMessageHandler(forName: aurora.name)
     }
 
     deinit {
         removeJavascriptMethods()
     }
-}
-
-extension WKWebViewController: WKScriptMessageHandler {
-    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        switch message.name {
-        case JavaScript.Method.scan.name: break
-        case JavaScript.Method.tel.name:
-            guard let phone = message.body as? String else { break }
-            UIApplication.shared.tel(phone: phone)
-        case JavaScript.Method.scanSuccess.name: break
-        case JavaScript.Aurora.Method.auth.name: break
-        case JavaScript.Wechat.Method.auth.name: break
-        default: break
-        }
-    }
-}
-
-extension WKWebViewController {
-    @IBAction func unwindFromScan(sender: UIStoryboardSegue) {}
 }
 
 extension WKWebViewController: WKUIDelegate {}
@@ -190,97 +200,34 @@ extension WKWebViewController: WKNavigationDelegate {
     }
 }
 
-extension WKWebViewController {
-    enum AuthMethod {
-        case wechat
-        case aurora
+extension WKWebViewController: WechatServiceDelegate {
+    func service(_ service: WechatService, didReceivedMessageRequest: ShowMessageFromWXReq) {}
+
+    func service(_ service: WechatService, didReceivedLaunchWXRequest: LaunchFromWXReq) {}
+
+    func service(_ service: WechatService, didReceivedMessageResponse: SendMessageToWXResp) {}
+
+    func service(_ service: WechatService, didReceivedAuthResponse: SendAuthResp) {
+        log.debug("wechat service did received auth response: \(didReceivedAuthResponse)")
+        evaluateJavaScript(for: .auth(response: didReceivedAuthResponse))
     }
 
-    enum AuthState: String {
-        case `default` = "huoda_wx_oauth_state"
-    }
+    func service(_ service: WechatService, didReceivedAddCardResponse: AddCardToWXCardPackageResp) {}
 
-    enum AuthScope: String {
-        case `default` = "snsapi_userinfo"
-    }
+    func service(_ service: WechatService, didReceivedChooseCardResponse: WXChooseCardResp) {}
 
-    func auth(_ method: AuthMethod) {
-        switch method {
-        case .wechat: wechatAuth()
-        case .aurora: auroraAuth()
-        }
-    }
+    func service(_ service: WechatService, didReceivedChooseInvoiceResponse: WXChooseInvoiceResp) {}
 
-    func wechatAuth(state: AuthState = .default, scope: AuthScope = .default) {
-        guard WXApi.isWXAppInstalled() else {
-            alert(title: "提示", message: "您未安装微信,暂不能使用微信登录")
-            return
-        }
+    func service(_ service: WechatService, didReceivedSubscribeMsgResponse: WXChooseInvoiceResp) {}
 
-        let request = SendAuthReq()
-        request.state = state.rawValue
-        request.scope = scope.rawValue
+    func service(_ service: WechatService, didReceivedLaunchMiniProgram: WXLaunchMiniProgramResp) {}
 
-        WXApi.send(request) {
-            log.debug($0 ? "success" : "failure")
-        }
-    }
+    func service(_ service: WechatService, didReceivedInvoiceAuthInsertResponse: WXInvoiceAuthInsertResp) {}
 
-    func evaluateJavaScript(for wechat: JavaScript.Wechat) {
-        webView.evaluateJavaScript(wechat.script()) { result, error in
-            let debugLog = NSMutableString(string: "wechat javaScript evaluated")
+    func service(_ service: WechatService, didReceivedNonTaxpayResponse: WXNontaxPayResp) {}
 
-            if let result = result {
-                debugLog.append("result: \(result)")
-            }
-
-            if let error = error {
-                debugLog.append(", error: \(error)")
-            }
-
-            log.debug(debugLog)
-        }
-    }
-
-    func evaluateJavaScript(for aurora: JavaScript.Aurora) {
-        webView.evaluateJavaScript(aurora.script()) { result, error in
-            let debugLog = NSMutableString(string: "aurora javaScript evaluated")
-
-            if let result = result {
-                debugLog.append("result: \(result)")
-            }
-
-            if let error = error {
-                debugLog.append(", error: \(error)")
-            }
-
-            log.debug(debugLog)
-        }
-    }
-
-    func auroraAuth() {
-        guard JVERIFICATIONService.checkVerifyEnable() else {
-            log.debug("aurora is not eligible on current network")
-            evaluateJavaScript(for: .networkFailed)
-
-            return
-        }
-
-        JVERIFICATIONService.getAuthorizationWith(self) { [weak self] info in
-            log.debug("aurora authorization result: \(info ?? [:])")
-            guard let self = self else { return }
-            guard let info = info else { return }
-            let code = info["code"] as? String ?? ""
-            let token = info["loginToken"] as? String ?? ""
-            let `operator` = info["operator"] as? String ?? ""
-            let message = info["content"] as? String ?? ""
-            let parameter = (code: code, token: token, operator: `operator`, message: message)
-            `self`.evaluateJavaScript(for: .authorization(parameter))
-        }
-    }
+    func service(_ service: WechatService, didReceivedPayInsuranceResponse: WXPayInsuranceResp) {}
 }
-
-extension WKWebViewController: WechatServiceDelegate {}
 
 extension WKWebViewController: WechatAuthAPIDelegate {
     open func onAuthGotQrcode(_ image: UIImage) {

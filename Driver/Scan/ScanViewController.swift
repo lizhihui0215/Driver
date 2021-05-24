@@ -10,7 +10,7 @@ import ZLPhotoBrowser
 class ScanViewController: BaseViewController {
     @IBOutlet var scanAnimationImageView: ScanAnimationImageView!
     @IBOutlet var torchButton: UIButton!
-    @IBOutlet var finishedButton: UIButton!
+//    @IBOutlet var finishedButton: UIButton!
 
     @IBOutlet var buttonStackView: UIStackView!
     var viewModel: ScanViewModel!
@@ -22,6 +22,7 @@ class ScanViewController: BaseViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = false
         startScanning()
     }
 
@@ -43,14 +44,12 @@ class ScanViewController: BaseViewController {
     }
 
     private func startScanning() {
-        `self`.finishedButton.isEnabled = false
+//        `self`.finishedButton.isEnabled = false
         scanAnimationImageView.startAnimation()
         viewModel.startScanning().onSuccess { [weak self] _ in
             guard let self = self else { return }
             `self`.scanAnimationImageView.stopAnimation()
-            `self`.perform(segue: StoryboardSegue.Main.scanFinished)
-        }.onFailure { _ in
-            `self`.finishedButton.isEnabled = false
+            `self`.perform(segue: StoryboardSegue.Main.scanFinished, sender: self)
         }
     }
 
@@ -70,8 +69,7 @@ class ScanViewController: BaseViewController {
         let photoPreviewSheet = ZLPhotoPreviewSheet()
         photoPreviewSheet.selectImageBlock = { [weak self] images, assets, isOriginal in
             guard let self = self, let image = images.first else { return }
-            let success = `self`.viewModel.discernMetadataObject(from: image)
-            `self`.finishedButton.isEnabled = success
+            _ = `self`.viewModel.discernMetadataObject(from: image)
             log.info("image: ", context: images)
             log.info("assets: ", context: assets)
             log.info("isOriginal: ", context: isOriginal)

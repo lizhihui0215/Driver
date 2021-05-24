@@ -31,6 +31,13 @@
 		2627CDDE2657868400DC2C6D /* XCAssets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2627CDDB2657868400DC2C6D /* XCAssets+Generated.swift */; };
 		2627CDDF2657868400DC2C6D /* IB-Scenes+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2627CDDC2657868400DC2C6D /* IB-Scenes+Generated.swift */; };
 		262CEA872657DAAB004E7588 /* GIFHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262CEA862657DAAA004E7588 /* GIFHUD.swift */; };
+		262D5350265B4C900015543E /* WKWebViewController+Javascript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262D534F265B4C900015543E /* WKWebViewController+Javascript.swift */; };
+		262D5352265B4D070015543E /* WKWebViewController+JavascriptInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262D5351265B4D070015543E /* WKWebViewController+JavascriptInteraction.swift */; };
+		262D5354265B4DB90015543E /* AurorUIFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262D5353265B4DB90015543E /* AurorUIFactory.swift */; };
+		262D5356265B56C90015543E /* Javascript+Wechat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262D5355265B56C90015543E /* Javascript+Wechat.swift */; };
+		262D5358265B56DE0015543E /* Javascript+Aurora.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262D5357265B56DE0015543E /* Javascript+Aurora.swift */; };
+		262D535A265B56E70015543E /* Javascript+System.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262D5359265B56E70015543E /* Javascript+System.swift */; };
+		262D535C265B57030015543E /* Javascript+Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262D535B265B57030015543E /* Javascript+Map.swift */; };
 		263A5FD226594B5A00C2B0A8 /* ScanBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263A5FD126594B5A00C2B0A8 /* ScanBackgroundView.swift */; };
 		263A5FD42659561500C2B0A8 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263A5FD32659561500C2B0A8 /* UIView+Extension.swift */; };
 		267EA93D265799C700A3BB2D /* WechatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267EA93C265799C700A3BB2D /* WechatService.swift */; };
@@ -104,6 +111,13 @@
 		2627CDDC2657868400DC2C6D /* IB-Scenes+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IB-Scenes+Generated.swift"; sourceTree = "<group>"; };
 		2627CDE02657877500DC2C6D /* Driver-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Driver-Bridging-Header.h"; sourceTree = "<group>"; };
 		262CEA862657DAAA004E7588 /* GIFHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIFHUD.swift; sourceTree = "<group>"; };
+		262D534F265B4C900015543E /* WKWebViewController+Javascript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKWebViewController+Javascript.swift"; sourceTree = "<group>"; };
+		262D5351265B4D070015543E /* WKWebViewController+JavascriptInteraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKWebViewController+JavascriptInteraction.swift"; sourceTree = "<group>"; };
+		262D5353265B4DB90015543E /* AurorUIFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AurorUIFactory.swift; sourceTree = "<group>"; };
+		262D5355265B56C90015543E /* Javascript+Wechat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Javascript+Wechat.swift"; sourceTree = "<group>"; };
+		262D5357265B56DE0015543E /* Javascript+Aurora.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Javascript+Aurora.swift"; sourceTree = "<group>"; };
+		262D5359265B56E70015543E /* Javascript+System.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Javascript+System.swift"; sourceTree = "<group>"; };
+		262D535B265B57030015543E /* Javascript+Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Javascript+Map.swift"; sourceTree = "<group>"; };
 		263A5FD126594B5A00C2B0A8 /* ScanBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanBackgroundView.swift; sourceTree = "<group>"; };
 		263A5FD32659561500C2B0A8 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		267EA93C265799C700A3BB2D /* WechatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WechatService.swift; sourceTree = "<group>"; };
@@ -159,6 +173,10 @@
 			isa = PBXGroup;
 			children = (
 				262672052659006C00F5DED3 /* Javascript.swift */,
+				262D5355265B56C90015543E /* Javascript+Wechat.swift */,
+				262D5359265B56E70015543E /* Javascript+System.swift */,
+				262D535B265B57030015543E /* Javascript+Map.swift */,
+				262D5357265B56DE0015543E /* Javascript+Aurora.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -196,7 +214,10 @@
 				2627CDB526575E9600DC2C6D /* Service */,
 				262672042659003100F5DED3 /* Models */,
 				26D38D3D265800490060E7F2 /* BaseViewController.swift */,
+				262D534F265B4C900015543E /* WKWebViewController+Javascript.swift */,
+				262D5351265B4D070015543E /* WKWebViewController+JavascriptInteraction.swift */,
 				2627CD8926575B9D00DC2C6D /* WKWebViewController.swift */,
+				262D5353265B4DB90015543E /* AurorUIFactory.swift */,
 				262CEA862657DAAA004E7588 /* GIFHUD.swift */,
 				2627CD8B26575B9D00DC2C6D /* Main.storyboard */,
 				2627CD8E26575BA100DC2C6D /* Assets.xcassets */,
@@ -600,6 +621,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2627CDDF2657868400DC2C6D /* IB-Scenes+Generated.swift in Sources */,
+				262D5352265B4D070015543E /* WKWebViewController+JavascriptInteraction.swift in Sources */,
+				262D5354265B4DB90015543E /* AurorUIFactory.swift in Sources */,
 				2627CDBB26575ECD00DC2C6D /* WindowService.swift in Sources */,
 				26D38D362657FA610060E7F2 /* ScanAnimationImageView.swift in Sources */,
 				262CEA872657DAAB004E7588 /* GIFHUD.swift in Sources */,
@@ -609,6 +632,7 @@
 				2627CDC526575EEA00DC2C6D /* App.swift in Sources */,
 				2627CDD126577DB100DC2C6D /* Device.swift in Sources */,
 				2627CDCF26577D7000DC2C6D /* Bundle+Extension.swift in Sources */,
+				262D5358265B56DE0015543E /* Javascript+Aurora.swift in Sources */,
 				2627CDC426575EEA00DC2C6D /* AppDelegate.swift in Sources */,
 				267EA9462657BE1400A3BB2D /* LayoutOperator.swift in Sources */,
 				2627CDBD26575ECD00DC2C6D /* AppStartupService.swift in Sources */,
@@ -618,15 +642,19 @@
 				2627CDC626575EEA00DC2C6D /* SceneDelegate.swift in Sources */,
 				2627CDBA26575ECD00DC2C6D /* Appearance.swift in Sources */,
 				263A5FD42659561500C2B0A8 /* UIView+Extension.swift in Sources */,
+				262D535A265B56E70015543E /* Javascript+System.swift in Sources */,
 				267EA9452657BE1400A3BB2D /* LayoutHelpers.swift in Sources */,
 				2627CDBC26575ECD00DC2C6D /* LoggerService.swift in Sources */,
 				2627CDDD2657868400DC2C6D /* IB-Segues+Generated.swift in Sources */,
 				263A5FD226594B5A00C2B0A8 /* ScanBackgroundView.swift in Sources */,
 				2627CDDE2657868400DC2C6D /* XCAssets+Generated.swift in Sources */,
+				262D535C265B57030015543E /* Javascript+Map.swift in Sources */,
 				267EA93D265799C700A3BB2D /* WechatService.swift in Sources */,
+				262D5356265B56C90015543E /* Javascript+Wechat.swift in Sources */,
 				26D38D3A2657FA710060E7F2 /* ScanService.swift in Sources */,
 				26D38D42265800BF0060E7F2 /* ScanViewModel.swift in Sources */,
 				26D38D352657FA610060E7F2 /* ScanCornerView.swift in Sources */,
+				262D5350265B4C900015543E /* WKWebViewController+Javascript.swift in Sources */,
 				2627CDC826575F3B00DC2C6D /* Cache.swift in Sources */,
 				2627CDD526577E0400DC2C6D /* Keys.swift in Sources */,
 				2627CDC326575EEA00DC2C6D /* AppServiceManager.swift in Sources */,
@@ -809,7 +837,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.dmd56.driver.Driver;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dmdkj.driver;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_GEN_INPUT = Driver;
 				SWIFT_OBJC_BRIDGING_HEADER = "Driver/Driver-Bridging-Header.h";
@@ -834,7 +862,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.dmd56.driver.Driver;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dmdkj.driver;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_GEN_INPUT = Driver;
 				SWIFT_OBJC_BRIDGING_HEADER = "Driver/Driver-Bridging-Header.h";

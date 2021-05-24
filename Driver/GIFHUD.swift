@@ -63,7 +63,7 @@ class GIFHUD: UIViewController {
             errorImageView.centerXAnchor ~ centerXAnchor
             errorImageView.centerYAnchor ~ centerYAnchor
             titleLabel.centerXAnchor ~ errorImageView.centerXAnchor
-            titleLabel.topAnchor ~ errorImageView.topAnchor + 20
+            titleLabel.topAnchor ~ errorImageView.bottomAnchor + 20
             button.centerXAnchor ~ errorImageView.centerXAnchor
             button.topAnchor ~ titleLabel.topAnchor + 20
             button.addTarget(self, action: #selector(Self.buttonTapped(_:)), for: .touchUpInside)

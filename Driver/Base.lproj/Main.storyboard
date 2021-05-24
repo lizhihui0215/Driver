@@ -24,7 +24,7 @@
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="CeK-PK-n8Y">
+                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="CeK-PK-n8Y">
                                 <rect key="frame" x="176" y="373" width="62" height="150"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BR9-Wy-FEM">
@@ -94,8 +94,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="57" translatesAutoresizingMaskIntoConstraints="NO" id="ESp-zA-QVj">
-                                <rect key="frame" x="52.5" y="735" width="309" height="87"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="140" translatesAutoresizingMaskIntoConstraints="NO" id="ESp-zA-QVj">
+                                <rect key="frame" x="72" y="735" width="270" height="87"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zy6-Xh-WXV">
                                         <rect key="frame" x="0.0" y="0.0" width="65" height="87"/>
@@ -106,15 +106,8 @@
                                             <action selector="flashTapped:" destination="iMA-UN-OPl" eventType="touchUpInside" id="x0H-rB-iIu"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RB2-pw-pLQ">
-                                        <rect key="frame" x="122" y="28.5" width="65" height="30"/>
-                                        <state key="normal" title="完成"/>
-                                        <connections>
-                                            <action selector="finishedTapped:" destination="iMA-UN-OPl" eventType="touchUpInside" id="6Ap-i1-dtq"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bZV-Og-u9d">
-                                        <rect key="frame" x="244" y="0.0" width="65" height="87"/>
+                                        <rect key="frame" x="205" y="0.0" width="65" height="87"/>
                                         <state key="normal" backgroundImage="qrcode_scan_btn_photo_nor"/>
                                         <state key="selected" backgroundImage="qrcode_scan_btn_photo_down"/>
                                         <state key="highlighted" backgroundImage="qrcode_scan_btn_photo_down"/>
@@ -153,7 +146,6 @@
                     <navigationItem key="navigationItem" title="二维码扫描" id="1yN-fM-u0x"/>
                     <connections>
                         <outlet property="buttonStackView" destination="ESp-zA-QVj" id="jip-hx-BGm"/>
-                        <outlet property="finishedButton" destination="RB2-pw-pLQ" id="4sn-Fo-hEr"/>
                         <outlet property="scanAnimationImageView" destination="Zu2-bn-MRx" id="oN9-31-Pnt"/>
                         <outlet property="torchButton" destination="Zy6-Xh-WXV" id="OEE-tI-JT9"/>
                         <segue destination="2zH-ic-1rH" kind="unwind" identifier="scanFinished" unwindAction="unwindFromScanWithSender:" id="SbF-bt-PVX"/>
