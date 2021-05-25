@@ -1,3 +1,7 @@
+# Summary
+
+Driver app is builded on Xcode 12, use swift 5
+
 # Pre-Requirement
   - Before you bootstrap, it's you responsibility to install bellow command line tools via `Terminal`
     - [brew](https://brew.sh/)
