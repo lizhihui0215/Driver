@@ -55,6 +55,7 @@
 		26D38D42265800BF0060E7F2 /* ScanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D38D41265800BF0060E7F2 /* ScanViewModel.swift */; };
 		26FBBC9F2660CFD5003F576B /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FBBC9E2660CFD5003F576B /* URL+Extension.swift */; };
 		2B3E0FD79D84B991A92AC80A /* Pods_Driver_DriverUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75D85420A6BB4C1AB3B56224 /* Pods_Driver_DriverUITests.framework */; };
+		A19392602661030E00874066 /* PermissionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A193925F2661030E00874066 /* PermissionManager.swift */; };
 		B192BA4F01FE27C99D690962 /* Pods_Driver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78F7B1829125D1CC3E160622 /* Pods_Driver.framework */; };
 		CFC98121E8AD05EC69D8B44B /* Pods_DriverTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62F7D9FBD1B924CF145F6D8E /* Pods_DriverTests.framework */; };
 /* End PBXBuildFile section */
@@ -140,6 +141,7 @@
 		75D85420A6BB4C1AB3B56224 /* Pods_Driver_DriverUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Driver_DriverUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		78F7B1829125D1CC3E160622 /* Pods_Driver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Driver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1415C005A483E58598D17B2 /* Pods-Driver.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Driver.debug.xcconfig"; path = "Target Support Files/Pods-Driver/Pods-Driver.debug.xcconfig"; sourceTree = "<group>"; };
+		A193925F2661030E00874066 /* PermissionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionManager.swift; sourceTree = "<group>"; };
 		DA8A5BC09346C83BA6C6AC5E /* Pods-Driver-DriverUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Driver-DriverUITests.release.xcconfig"; path = "Target Support Files/Pods-Driver-DriverUITests/Pods-Driver-DriverUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -261,6 +263,7 @@
 				2627CDB926575ECD00DC2C6D /* AppStartupService.swift */,
 				2627CDB826575ECD00DC2C6D /* LoggerService.swift */,
 				2627CDB726575ECD00DC2C6D /* WindowService.swift */,
+				A193925F2661030E00874066 /* PermissionManager.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -636,6 +639,7 @@
 				2627CDD126577DB100DC2C6D /* Device.swift in Sources */,
 				2627CDCF26577D7000DC2C6D /* Bundle+Extension.swift in Sources */,
 				262D5358265B56DE0015543E /* Javascript+Aurora.swift in Sources */,
+				A19392602661030E00874066 /* PermissionManager.swift in Sources */,
 				2627CDC426575EEA00DC2C6D /* AppDelegate.swift in Sources */,
 				267EA9462657BE1400A3BB2D /* LayoutOperator.swift in Sources */,
 				2627CDBD26575ECD00DC2C6D /* AppStartupService.swift in Sources */,

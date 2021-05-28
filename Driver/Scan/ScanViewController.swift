@@ -23,6 +23,17 @@ class ScanViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = false
+        
+        guard PermissionManager.shared.isCameraAuthorization else {
+            alert(message: "请打开您的相机权限,以便于您能正常使用扫一扫扫描识别条码或者二维码,或者拍摄照片上传照片等功能")
+            return
+        }
+
+        guard PermissionManager.shared.isLibraryAuthorization else {
+            alert(message: "请打开您的相册权限,以便于您能正常使用扫一扫扫描识别条码或者二维码,或者拍摄照片上传照片等功能")
+            return
+        }
+
         startScanning()
     }
 
