@@ -34,11 +34,11 @@ class WKWebViewController: UIViewController {
     }
 
     @IBAction func toBaiduMapTapped(_ sender: UIButton) {
-//        UIApplication.shared.bdapp(location: (longitude: "String", laitude: "String"))
+        UIApplication.shared.bdapp(name: "25", longitude: "108.954163", laitude: "34.278155")
     }
 
     @IBAction func toGaodeMapTapped(_ sender: UIButton) {
-//        UIApplication.shared.amap(poiname: "", poiid: "", lat: "", lon: "")
+        UIApplication.shared.amap(name: "25", longitude: "108.954163", laitude: "34.278155")
     }
 
     lazy var configuration: WKWebViewConfiguration = {

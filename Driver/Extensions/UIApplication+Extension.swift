@@ -29,7 +29,7 @@ extension UIApplication {
             return
         }
 
-        guard [longitude, laitude, name].allSatisfy({ $0.isEmpty }) else {
+        guard [longitude, laitude, name].allSatisfy({ !$0.isEmpty }) else {
             alert(message: "目标地址不明确")
             return
         }
@@ -45,7 +45,7 @@ extension UIApplication {
             return
         }
 
-        guard [longitude, laitude, name].allSatisfy({ $0.isEmpty }) else {
+        guard [longitude, laitude, name].allSatisfy({ !$0.isEmpty }) else {
             alert(message: "目标地址不明确")
             return
         }
