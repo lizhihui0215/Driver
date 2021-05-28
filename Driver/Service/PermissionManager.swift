@@ -22,9 +22,21 @@ class PermissionManager {
     }
 
     var isLibraryAuthorization: Bool {
-        let authorizationStatus = PHPhotoLibrary.authorizationStatus()
+        let authorizationStatus: PHAuthorizationStatus
+        if #available(iOS 14, *) {
+            authorizationStatus = PHPhotoLibrary.authorizationStatus(for: .readWrite)
+        } else {
+            authorizationStatus = PHPhotoLibrary.authorizationStatus()
+        }
         return authorizationStatus == .authorized
     }
 
     init() {}
+
+    func requestAccess(for mediaType: AVMediaType,
+                       completionHandler handler: @escaping (Bool) -> Void) {
+        AVCaptureDevice.requestAccess(for: .video) { status in
+            handler(status)
+        }
+    }
 }

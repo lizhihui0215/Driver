@@ -91,7 +91,7 @@ class WKWebViewController: UIViewController {
         default: super.prepare(for: segue, sender: sender)
         }
     }
-
+    
     private func setupWKWebView() {
         webView.load(request)
         webView.scrollView.showsVerticalScrollIndicator = false

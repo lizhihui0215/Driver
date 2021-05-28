@@ -49,10 +49,6 @@ class ScanViewController: BaseViewController {
             return
         }
 
-        if PermissionManager.shared.isLibraryAuthorization {
-            alert(message: "请打开您的相册权限,以便于您能正常使用扫一扫扫描识别条码或者二维码,或者拍摄照片上传照片等功能")
-        }
-
         scanAnimationImageView.startAnimation()
         viewModel.startScanning().onSuccess { [weak self] _ in
             guard let self = self else { return }
@@ -74,6 +70,11 @@ class ScanViewController: BaseViewController {
     }
 
     @IBAction func albumTapped(_ sender: UIButton) {
+        guard PermissionManager.shared.isLibraryAuthorization else {
+            alert(message: "请打开您的相册权限,以便于您能正常使用扫一扫扫描识别条码或者二维码,或者拍摄照片上传照片等功能")
+            return
+        }
+
         let photoPreviewSheet = ZLPhotoPreviewSheet()
         photoPreviewSheet.selectImageBlock = { [weak self] images, assets, isOriginal in
             guard let self = self, let image = images.first else { return }
