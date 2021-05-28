@@ -10,8 +10,8 @@ import ZLPhotoBrowser
 class ScanViewController: BaseViewController {
     @IBOutlet var scanAnimationImageView: ScanAnimationImageView!
     @IBOutlet var torchButton: UIButton!
-
     @IBOutlet var buttonStackView: UIStackView!
+
     var viewModel: ScanViewModel!
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -27,9 +27,7 @@ class ScanViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        guard let previewLayer = viewModel.previewLayer else {
-            return
-        }
+        guard let previewLayer = viewModel.previewLayer else { return }
         view.layer.backgroundColor = UIColor.clear.cgColor
         view.layer.insertSublayer(previewLayer, at: 0)
         viewModel.previewLayer?.frame = UIScreen.main.bounds
