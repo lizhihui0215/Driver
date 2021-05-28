@@ -22,7 +22,10 @@ extension UIApplication {
     }
 
     func bdapp(name: String, longitude: String, laitude: String, completionHandler completion: ((Bool) -> Void)? = nil) {
-        guard let url = URL(string: "baidumap://map/navi?location=\(laitude),\(longitude)&coord_type=gcj02src=\(app.identifier)") else { return }
+        guard let url = URL(string: "baidumap://map/navi?location=\(laitude),\(longitude)&coord_type=gcj02src=\(app.identifier)") else {
+            alert(message: "目标地址不明确")
+            return
+        }
 
         guard canOpenURL(url) else {
             alert(message: "未找到对应的应用程序，请下载安装")
@@ -38,7 +41,10 @@ extension UIApplication {
     }
 
     func amap(name: String, longitude: String, laitude: String, completionHandler completion: ((Bool) -> Void)? = nil) {
-        guard let url = URL(string: "iosamap://navi?sourceApplication=\(app.identifier)&poiname=\(name)&poiid=BGVIS&lat=\(laitude)&lon=\(longitude)&dev=0&style=2") else { return }
+        guard let url = URL(string: "iosamap://navi?sourceApplication=\(app.identifier)&poiname=\(name)&poiid=BGVIS&lat=\(laitude)&lon=\(longitude)&dev=0&style=2") else {
+            alert(message: "目标地址不明确")
+            return
+        }
 
         guard canOpenURL(url) else {
             alert(message: "未找到对应的应用程序，请下载安装")
