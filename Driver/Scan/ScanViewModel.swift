@@ -20,35 +20,35 @@ class ScanViewModel {
     var didReceivedMetadataObject: ScanService.DidReceivedMetadataObject?
     typealias SegueIdentifier = String
 
-    let scanner = ScanService.shared
+    let scanner = ScanService()
 
-    public var previewLayer: AVCaptureVideoPreviewLayer {
-        scanner.previewLayer
+    public var previewLayer: AVCaptureVideoPreviewLayer? {
+        scanner?.previewLayer
     }
 
     var isTorchAvailable: Bool {
-        scanner.isTorchAvailable
+        scanner?.isTorchAvailable ?? false
     }
 
     public var torchMode: AVCaptureDevice.TorchMode {
         get {
-            scanner.torchMode
+            scanner?.torchMode ?? .off
         }
         set {
-            scanner.torchMode = newValue
+            scanner?.torchMode = newValue
         }
     }
 
     final func startScanning() -> ViewModelFuture<MetadataObject> {
         ViewModelFuture<MetadataObject> { completion in
-            scanner.didReceivedMetadataObject = { [weak self] metadataObject, completionHandler in
+            scanner?.didReceivedMetadataObject = { [weak self] metadataObject, completionHandler in
                 guard let self = self else { return }
                 `self`.metadataObject = metadataObject
                 completionHandler(false)
                 completion(.success(metadataObject))
                 `self`.playBee()
             }
-            scanner.startRunning()
+            scanner?.startRunning()
         }
     }
 
@@ -62,7 +62,7 @@ class ScanViewModel {
     }
 
     func discernMetadataObject(from image: UIImage) -> Bool {
-        guard let metadataObject = scanner.discernMetadataObject(from: image) else { return false }
+        guard let metadataObject = scanner?.discernMetadataObject(from: image) else { return false }
         self.metadataObject = metadataObject
         playBee()
         return true
@@ -73,6 +73,6 @@ class ScanViewModel {
     }
 
     func stopScanning() {
-        scanner.stopRunning()
+        scanner?.stopRunning()
     }
 }

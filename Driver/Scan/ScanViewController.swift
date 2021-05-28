@@ -10,7 +10,6 @@ import ZLPhotoBrowser
 class ScanViewController: BaseViewController {
     @IBOutlet var scanAnimationImageView: ScanAnimationImageView!
     @IBOutlet var torchButton: UIButton!
-//    @IBOutlet var finishedButton: UIButton!
 
     @IBOutlet var buttonStackView: UIStackView!
     var viewModel: ScanViewModel!
@@ -23,25 +22,17 @@ class ScanViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = false
-        
-        guard PermissionManager.shared.isCameraAuthorization else {
-            alert(message: "请打开您的相机权限,以便于您能正常使用扫一扫扫描识别条码或者二维码,或者拍摄照片上传照片等功能")
-            return
-        }
-
-        guard PermissionManager.shared.isLibraryAuthorization else {
-            alert(message: "请打开您的相册权限,以便于您能正常使用扫一扫扫描识别条码或者二维码,或者拍摄照片上传照片等功能")
-            return
-        }
-
         startScanning()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        guard let previewLayer = viewModel.previewLayer else {
+            return
+        }
         view.layer.backgroundColor = UIColor.clear.cgColor
-        view.layer.insertSublayer(viewModel.previewLayer, at: 0)
-        viewModel.previewLayer.frame = UIScreen.main.bounds
+        view.layer.insertSublayer(previewLayer, at: 0)
+        viewModel.previewLayer?.frame = UIScreen.main.bounds
         startScanning()
         if !viewModel.isTorchAvailable {
             buttonStackView.removeArrangedSubview(torchButton)
@@ -55,7 +46,15 @@ class ScanViewController: BaseViewController {
     }
 
     private func startScanning() {
-//        `self`.finishedButton.isEnabled = false
+        guard PermissionManager.shared.isCameraAuthorization else {
+            alert(message: "请打开您的相机权限,以便于您能正常使用扫一扫扫描识别条码或者二维码,或者拍摄照片上传照片等功能")
+            return
+        }
+
+        if PermissionManager.shared.isLibraryAuthorization {
+            alert(message: "请打开您的相册权限,以便于您能正常使用扫一扫扫描识别条码或者二维码,或者拍摄照片上传照片等功能")
+        }
+
         scanAnimationImageView.startAnimation()
         viewModel.startScanning().onSuccess { [weak self] _ in
             guard let self = self else { return }

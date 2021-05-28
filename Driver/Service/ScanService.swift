@@ -33,7 +33,6 @@ class ScanService: NSObject, AVCaptureMetadataOutputObjectsDelegate {
     typealias ShouldContinueScanHandler = (Bool) -> Void
     typealias DidReceivedMetadataObject = (_ metadataObject: MetadataObject, _ completionHandler: @escaping ShouldContinueScanHandler) -> Void
 
-    public static let shared = ScanService()!
     public var didReceivedMetadataObject: DidReceivedMetadataObject?
     public var previewLayer: AVCaptureVideoPreviewLayer
 
