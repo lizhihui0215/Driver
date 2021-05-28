@@ -53,6 +53,7 @@
 		26D38D3E265800490060E7F2 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D38D3D265800490060E7F2 /* BaseViewController.swift */; };
 		26D38D40265800720060E7F2 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D38D3F265800720060E7F2 /* UIViewController+Extension.swift */; };
 		26D38D42265800BF0060E7F2 /* ScanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D38D41265800BF0060E7F2 /* ScanViewModel.swift */; };
+		26FBBC9F2660CFD5003F576B /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FBBC9E2660CFD5003F576B /* URL+Extension.swift */; };
 		2B3E0FD79D84B991A92AC80A /* Pods_Driver_DriverUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75D85420A6BB4C1AB3B56224 /* Pods_Driver_DriverUITests.framework */; };
 		B192BA4F01FE27C99D690962 /* Pods_Driver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78F7B1829125D1CC3E160622 /* Pods_Driver.framework */; };
 		CFC98121E8AD05EC69D8B44B /* Pods_DriverTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62F7D9FBD1B924CF145F6D8E /* Pods_DriverTests.framework */; };
@@ -133,6 +134,7 @@
 		26D38D3D265800490060E7F2 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		26D38D3F265800720060E7F2 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		26D38D41265800BF0060E7F2 /* ScanViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanViewModel.swift; sourceTree = "<group>"; };
+		26FBBC9E2660CFD5003F576B /* URL+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extension.swift"; sourceTree = "<group>"; };
 		3085E4A9EE7A8F97A4EAD3E5 /* Pods-DriverTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DriverTests.release.xcconfig"; path = "Target Support Files/Pods-DriverTests/Pods-DriverTests.release.xcconfig"; sourceTree = "<group>"; };
 		62F7D9FBD1B924CF145F6D8E /* Pods_DriverTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DriverTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		75D85420A6BB4C1AB3B56224 /* Pods_Driver_DriverUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Driver_DriverUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -284,6 +286,7 @@
 				2627CDD226577DEB00DC2C6D /* UIApplication+Extension.swift */,
 				2627CDCE26577D6A00DC2C6D /* Bundle+Extension.swift */,
 				263A5FD32659561500C2B0A8 /* UIView+Extension.swift */,
+				26FBBC9E2660CFD5003F576B /* URL+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -653,6 +656,7 @@
 				262D5356265B56C90015543E /* Javascript+Wechat.swift in Sources */,
 				26D38D3A2657FA710060E7F2 /* ScanService.swift in Sources */,
 				26D38D42265800BF0060E7F2 /* ScanViewModel.swift in Sources */,
+				26FBBC9F2660CFD5003F576B /* URL+Extension.swift in Sources */,
 				26D38D352657FA610060E7F2 /* ScanCornerView.swift in Sources */,
 				262D5350265B4C900015543E /* WKWebViewController+Javascript.swift in Sources */,
 				2627CDC826575F3B00DC2C6D /* Cache.swift in Sources */,

@@ -22,7 +22,9 @@ extension UIApplication {
     }
 
     func bdapp(name: String, longitude: String, laitude: String, completionHandler completion: ((Bool) -> Void)? = nil) {
-        guard let url = URL(string: "baidumap://map/navi?location=\(laitude),\(longitude)&coord_type=gcj02src=\(app.identifier)") else {
+        guard let url = URL(string: "baidumap://map/navi?location=\(laitude),\(longitude)&coord_type=gcj02src=\(app.identifier)",
+                            withAllowedCharacters: .urlQueryAllowed)
+        else {
             alert(message: "目标地址不明确")
             return
         }
@@ -41,7 +43,9 @@ extension UIApplication {
     }
 
     func amap(name: String, longitude: String, laitude: String, completionHandler completion: ((Bool) -> Void)? = nil) {
-        guard let url = URL(string: "iosamap://navi?sourceApplication=\(app.identifier)&poiname=\(name)&poiid=BGVIS&lat=\(laitude)&lon=\(longitude)&dev=0&style=2") else {
+        guard let url = URL(string: "iosamap://navi?sourceApplication=\(app.identifier)&poiname=\(name)&poiid=BGVIS&lat=\(laitude)&lon=\(longitude)&dev=0&style=2",
+                            withAllowedCharacters: .urlQueryAllowed)
+        else {
             alert(message: "目标地址不明确")
             return
         }
