@@ -34,7 +34,8 @@ class PermissionManager {
     init() {}
 
     func requestAccess(for mediaType: AVMediaType,
-                       completionHandler handler: @escaping (Bool) -> Void) {
+                       completionHandler handler: @escaping (Bool) -> Void)
+    {
         AVCaptureDevice.requestAccess(for: .video) { status in
             handler(status)
         }
