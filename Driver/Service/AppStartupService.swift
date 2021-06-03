@@ -9,7 +9,8 @@ import UIKit
 class AppStartupService: NSObject, AppService {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         Appearance.shared.launch()
-        PermissionManager.shared.requestAccess(for: .video) { _ in }
+        PermissionManager.shared.requestAccess(for: .avCapture(.video))
+        PermissionManager.shared.requestAccess(for: .photoLibrary)
         return true
     }
 }

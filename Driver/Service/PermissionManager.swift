@@ -10,6 +10,11 @@ import Foundation
 import Photos
 
 class PermissionManager {
+    enum Permission {
+        case avCapture(AVMediaType)
+        case photoLibrary
+    }
+
     public static let shared = PermissionManager()
 
     var isCameraAvailable: Bool {
@@ -33,11 +38,27 @@ class PermissionManager {
 
     init() {}
 
-    func requestAccess(for mediaType: AVMediaType,
-                       completionHandler handler: @escaping (Bool) -> Void)
+    func requestAccess(for permission: Permission,
+                       completionHandler handler: ((Bool) -> Void)? = nil)
     {
-        AVCaptureDevice.requestAccess(for: .video) { status in
-            handler(status)
+        switch permission {
+        case .avCapture:
+            AVCaptureDevice.requestAccess(for: .video) { status in
+                guard let handler = handler else { return }
+                handler(status)
+            }
+        case .photoLibrary:
+            if #available(iOS 14, *) {
+                PHPhotoLibrary.requestAuthorization(for: .readWrite) {
+                    guard let handler = handler else { return }
+                    handler($0 == .authorized)
+                }
+            } else {
+                PHPhotoLibrary.requestAuthorization {
+                    guard let handler = handler else { return }
+                    handler($0 == .authorized)
+                }
+            }
         }
     }
 }

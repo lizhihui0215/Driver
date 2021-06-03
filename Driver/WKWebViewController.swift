@@ -87,7 +87,6 @@ class WKWebViewController: UIViewController {
         switch segue.destination {
         case let destination as ScanViewController:
             destination.viewModel = ScanViewModel()
-
         default: super.prepare(for: segue, sender: sender)
         }
     }

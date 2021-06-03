@@ -85,7 +85,7 @@ class AurorUIFactory {
         return [privacyConstraintX!, privacyConstraintX2!, privacyConstraintY!, privacyConstraintH!]
     }()
 
-    lazy var aurorLoadingViewConstraints: [JVLayoutConstraint] = {
+    lazy var auroraLoadingViewConstraints: [JVLayoutConstraint] = {
         // loading
         let loadingConstraintX = JVLayoutConstraint(attribute: NSLayoutConstraint.Attribute.centerX, relatedBy: NSLayoutConstraint.Relation.equal, to: JVLayoutItem.super, attribute: NSLayoutConstraint.Attribute.centerX, multiplier: 1, constant: 0)
         let loadingConstraintY = JVLayoutConstraint(attribute: NSLayoutConstraint.Attribute.centerY, relatedBy: NSLayoutConstraint.Relation.equal, to: JVLayoutItem.super, attribute: NSLayoutConstraint.Attribute.centerY, multiplier: 1, constant: 0)
@@ -126,7 +126,7 @@ class AurorUIFactory {
         auroraUIConfiguration.privacyConstraints = auroraPrivacyViewConstraints
         auroraUIConfiguration.privacyHorizontalConstraints = auroraUIConfiguration.privacyConstraints
 
-        auroraUIConfiguration.loadingConstraints = aurorLoadingViewConstraints
+        auroraUIConfiguration.loadingConstraints = auroraLoadingViewConstraints
         auroraUIConfiguration.loadingHorizontalConstraints = auroraUIConfiguration.loadingConstraints
         return auroraUIConfiguration
     }
