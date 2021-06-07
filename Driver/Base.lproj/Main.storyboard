@@ -118,10 +118,10 @@
                                 </subviews>
                             </stackView>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yEr-Al-12w" customClass="ScanCornerView" customModule="Driver" customModuleProvider="target">
-                                <rect key="frame" x="86.5" y="277.5" width="241" height="241"/>
+                                <rect key="frame" x="32" y="223" width="350" height="350"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qrcode_scan_full_net" translatesAutoresizingMaskIntoConstraints="NO" id="Zu2-bn-MRx" customClass="ScanAnimationImageView" customModule="Driver" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="241" height="241"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="350" height="350"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </imageView>
                                 </subviews>
@@ -130,6 +130,8 @@
                                     <constraint firstAttribute="trailing" secondItem="Zu2-bn-MRx" secondAttribute="trailing" id="3MI-Z5-92C"/>
                                     <constraint firstAttribute="bottom" secondItem="Zu2-bn-MRx" secondAttribute="bottom" id="3N8-C5-u4i"/>
                                     <constraint firstItem="Zu2-bn-MRx" firstAttribute="leading" secondItem="yEr-Al-12w" secondAttribute="leading" id="R3m-bV-79y"/>
+                                    <constraint firstAttribute="height" constant="350" id="cBl-lK-YJP"/>
+                                    <constraint firstAttribute="width" constant="350" id="t2N-LC-0g4"/>
                                     <constraint firstItem="Zu2-bn-MRx" firstAttribute="top" secondItem="yEr-Al-12w" secondAttribute="top" id="vyf-PI-zAY"/>
                                 </constraints>
                             </view>
@@ -148,7 +150,7 @@
                         <outlet property="buttonStackView" destination="ESp-zA-QVj" id="jip-hx-BGm"/>
                         <outlet property="scanAnimationImageView" destination="Zu2-bn-MRx" id="oN9-31-Pnt"/>
                         <outlet property="torchButton" destination="Zy6-Xh-WXV" id="OEE-tI-JT9"/>
-                        <segue destination="2zH-ic-1rH" kind="unwind" identifier="scanFinished" unwindAction="unwindFromScanWithSender:" id="SbF-bt-PVX"/>
+                        <segue destination="2zH-ic-1rH" kind="unwind" identifier="scanFinished" unwindAction="unwindFromScanWithSender:" id="t4C-Qp-t4u"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ida-N9-dbQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

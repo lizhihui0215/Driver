@@ -146,7 +146,7 @@ class ScanService: NSObject, AVCaptureMetadataOutputObjectsDelegate {
     }
 
     public func discernMetadataObject(from image: UIImage) -> MetadataObject? {
-        guard let image = image.ciImage else { return nil }
+        guard let image = image.ciImage ?? CIImage(image: image) else { return nil }
 
         guard let detector = CIDetector(ofType: CIDetectorTypeQRCode,
                                         context: nil,

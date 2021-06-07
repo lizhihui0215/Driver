@@ -32,6 +32,7 @@ internal enum XCAssets {
       internal static let loginBtnDis = ImageAsset(name: "loginBtn_Dis")
       internal static let loginBtnHig = ImageAsset(name: "loginBtn_Hig")
       internal static let loginBtnNor = ImageAsset(name: "loginBtn_Nor")
+      internal static let logo = ImageAsset(name: "logo")
       internal static let windowClose = ImageAsset(name: "windowClose")
     }
     internal enum Hud {

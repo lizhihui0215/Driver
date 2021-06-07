@@ -18,7 +18,7 @@ class AurorUIFactory {
     let auroraUIConfiguration = JVUIConfig()
 
     lazy var auroraLogoConstraints: [JVLayoutConstraint] = {
-        let logoWidth = auroraUIConfiguration.logoImg?.size.width ?? 100
+        let logoWidth: CGFloat = 100
         let logoHeight = logoWidth
         let logoConstraintX = JVLayoutConstraint(attribute: NSLayoutConstraint.Attribute.centerX, relatedBy: NSLayoutConstraint.Relation.equal, to: JVLayoutItem.super, attribute: NSLayoutConstraint.Attribute.centerX, multiplier: 1, constant: 0)
         let logoConstraintY = JVLayoutConstraint(attribute: NSLayoutConstraint.Attribute.bottom, relatedBy: NSLayoutConstraint.Relation.equal, to: JVLayoutItem.super, attribute: NSLayoutConstraint.Attribute.centerY, multiplier: 1, constant: -90)
@@ -54,8 +54,8 @@ class AurorUIFactory {
 
     lazy var auroraLoginButtonConstraints: [JVLayoutConstraint] = {
         let normalImage = auroraUIConfiguration.logBtnImgs.first as? UIImage
-        let loginBtnWidth = normalImage?.size.width ?? 100
-        let loginBtnHeight = normalImage?.size.width ?? 100
+        let loginBtnWidth: CGFloat = 40
+        let loginBtnHeight: CGFloat = 200
         // slogan
         let sloganConstraintX = JVLayoutConstraint(attribute: NSLayoutConstraint.Attribute.centerX, relatedBy: NSLayoutConstraint.Relation.equal, to: JVLayoutItem.super, attribute: NSLayoutConstraint.Attribute.centerX, multiplier: 1, constant: 0)
         let sloganConstraintY = JVLayoutConstraint(attribute: NSLayoutConstraint.Attribute.bottom, relatedBy: NSLayoutConstraint.Relation.equal, to: JVLayoutItem.super, attribute: NSLayoutConstraint.Attribute.centerY, multiplier: 1, constant: -20)
@@ -102,10 +102,11 @@ class AurorUIFactory {
         auroraUIConfiguration.navCustom = false
         auroraUIConfiguration.navText = NSAttributedString(string: "登录统一认证", attributes: auroraNavTextAttributes)
         auroraUIConfiguration.navReturnHidden = false
+        auroraUIConfiguration.navReturnImg = XCAssets.Assets.Aurora.close.image
         auroraUIConfiguration.shouldAutorotate = true
         auroraUIConfiguration.autoLayout = true
         auroraUIConfiguration.modalTransitionStyle = UIModalTransitionStyle.coverVertical
-        auroraUIConfiguration.logoImg = UIImage(named: "cmccLogo")
+        auroraUIConfiguration.logoImg = XCAssets.Assets.Aurora.logo.image
         auroraUIConfiguration.logoConstraints = auroraLogoConstraints
         auroraUIConfiguration.logoHorizontalConstraints = auroraUIConfiguration.logoConstraints
         auroraUIConfiguration.numberConstraints = auroraPhoneConstraints
@@ -115,14 +116,16 @@ class AurorUIFactory {
         auroraUIConfiguration.logBtnImgs = auroraLoginButtonImages
         auroraUIConfiguration.logBtnConstraints = auroraLoginButtonConstraints
         auroraUIConfiguration.logBtnHorizontalConstraints = auroraUIConfiguration.logBtnConstraints
+
+        auroraUIConfiguration.checkViewHidden = true
         auroraUIConfiguration.uncheckedImg = XCAssets.Assets.Aurora.checkBoxUnSelected.image
-        auroraUIConfiguration.checkedImg = XCAssets.Assets.Aurora.checkBoxUnSelected.image
+        auroraUIConfiguration.checkedImg = XCAssets.Assets.Aurora.checkBoxSelected.image
         auroraUIConfiguration.checkViewConstraints = auroraCheckViewConstraints
         auroraUIConfiguration.checkViewHorizontalConstraints = auroraUIConfiguration.checkViewConstraints
+
         auroraUIConfiguration.privacyState = true
         auroraUIConfiguration.privacyTextFontSize = 12
-        auroraUIConfiguration.privacyTextAlignment = NSTextAlignment.left
-        auroraUIConfiguration.appPrivacyOne = ["应用自定义服务条款1", "应用自定义服务条款2"]
+        auroraUIConfiguration.privacyTextAlignment = NSTextAlignment.center
         auroraUIConfiguration.privacyConstraints = auroraPrivacyViewConstraints
         auroraUIConfiguration.privacyHorizontalConstraints = auroraUIConfiguration.privacyConstraints
 

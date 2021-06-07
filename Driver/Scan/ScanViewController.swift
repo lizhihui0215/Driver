@@ -82,6 +82,7 @@ class ScanViewController: BaseViewController {
             log.info("image: ", context: images)
             log.info("assets: ", context: assets)
             log.info("isOriginal: ", context: isOriginal)
+            `self`.perform(segue: StoryboardSegue.Main.scanFinished, sender: self)
         }
         photoPreviewSheet.showPhotoLibrary(sender: self)
     }

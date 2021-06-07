@@ -14,12 +14,14 @@ class AuroraService: NSObject, AppService {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let config = JVAuthConfig()
         config.appKey = app.aurora.appId
-        config.authBlock = { info in
-            guard let info = info, let code = info["code"], let content = info["content"] else { return }
-            log.debug("aurora auth result: \(code) content: \(content)")
-        }
+        #if DEBUG
+            config.authBlock = { info in
+                guard let info = info, let code = info["code"], let content = info["content"] else { return }
+                log.debug("aurora auth result: \(code) content: \(content)")
+            }
+            JVERIFICATIONService.setDebug(true)
+        #endif
         JVERIFICATIONService.setup(with: config)
-        JVERIFICATIONService.setDebug(true)
         return true
     }
 }
