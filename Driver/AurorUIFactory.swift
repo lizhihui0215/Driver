@@ -103,6 +103,7 @@ class AurorUIFactory {
         auroraUIConfiguration.navText = NSAttributedString(string: "登录统一认证", attributes: auroraNavTextAttributes)
         auroraUIConfiguration.navReturnHidden = false
         auroraUIConfiguration.navReturnImg = XCAssets.Assets.Aurora.close.image
+        auroraUIConfiguration.agreementNavReturnImage = XCAssets.Assets.Aurora.close.image
         auroraUIConfiguration.shouldAutorotate = true
         auroraUIConfiguration.autoLayout = true
         auroraUIConfiguration.modalTransitionStyle = UIModalTransitionStyle.coverVertical
