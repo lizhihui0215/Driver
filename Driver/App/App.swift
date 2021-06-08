@@ -19,7 +19,7 @@ public final class App {
         static let wechatAppId = "wx28958f871edd9da5"
         static let universalLinks = "https://driver-1257348791.cos-website.ap-beijing.myqcloud.com"
         static let auroraAppId = "dc8fbf398249c95c6f14c8db"
-        static let webURL = "http://192.168.110.154:8081/#/"
+        static let webURL = "https://driver-1257348791.cos.ap-beijing.myqcloud.com/index.html"
     }
 
     enum Keys: String {

@@ -54,23 +54,21 @@ class AurorUIFactory {
 
     lazy var auroraLoginButtonConstraints: [JVLayoutConstraint] = {
         let normalImage = auroraUIConfiguration.logBtnImgs.first as? UIImage
-        let loginBtnWidth: CGFloat = 40
-        let loginBtnHeight: CGFloat = 200
-        // slogan
-        let sloganConstraintX = JVLayoutConstraint(attribute: NSLayoutConstraint.Attribute.centerX, relatedBy: NSLayoutConstraint.Relation.equal, to: JVLayoutItem.super, attribute: NSLayoutConstraint.Attribute.centerX, multiplier: 1, constant: 0)
-        let sloganConstraintY = JVLayoutConstraint(attribute: NSLayoutConstraint.Attribute.bottom, relatedBy: NSLayoutConstraint.Relation.equal, to: JVLayoutItem.super, attribute: NSLayoutConstraint.Attribute.centerY, multiplier: 1, constant: -20)
-        let sloganConstraintW = JVLayoutConstraint(attribute: NSLayoutConstraint.Attribute.width, relatedBy: NSLayoutConstraint.Relation.equal, to: JVLayoutItem.none, attribute: NSLayoutConstraint.Attribute.width, multiplier: 1, constant: 130)
-        let sloganConstraintH = JVLayoutConstraint(attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, to: JVLayoutItem.none, attribute: NSLayoutConstraint.Attribute.height, multiplier: 1, constant: 20)
-        return [sloganConstraintX!, sloganConstraintY!, sloganConstraintW!, sloganConstraintH!]
+        let loginBtnWidth = normalImage?.size.width ?? 100
+        let loginBtnHeight = normalImage?.size.height ?? 100
+        let loginConstraintX = JVLayoutConstraint(attribute: NSLayoutConstraint.Attribute.centerX, relatedBy: NSLayoutConstraint.Relation.equal, to: JVLayoutItem.super, attribute: NSLayoutConstraint.Attribute.centerX, multiplier: 1, constant: 0)
+        let loginConstraintY = JVLayoutConstraint(attribute: NSLayoutConstraint.Attribute.bottom, relatedBy: NSLayoutConstraint.Relation.equal, to: JVLayoutItem.super, attribute: NSLayoutConstraint.Attribute.centerY, multiplier: 1, constant: 30)
+        let loginConstraintW = JVLayoutConstraint(attribute: NSLayoutConstraint.Attribute.width, relatedBy: NSLayoutConstraint.Relation.equal, to: JVLayoutItem.none, attribute: NSLayoutConstraint.Attribute.width, multiplier: 1, constant: loginBtnWidth)
+        let loginConstraintH = JVLayoutConstraint(attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, to: JVLayoutItem.none, attribute: NSLayoutConstraint.Attribute.height, multiplier: 1, constant: loginBtnHeight)
+        return [loginConstraintX!, loginConstraintY!, loginConstraintW!, loginConstraintH!]
     }()
 
     lazy var auroraCheckViewConstraints: [JVLayoutConstraint] = {
-        let checkViewWidth = auroraUIConfiguration.uncheckedImg?.size.width ?? 10
-        let checkViewHeight = auroraUIConfiguration.checkedImg?.size.height ?? 10
+        let checkViewWidth: CGFloat = 50
         let checkViewConstraintX = JVLayoutConstraint(attribute: NSLayoutConstraint.Attribute.left, relatedBy: NSLayoutConstraint.Relation.equal, to: JVLayoutItem.super, attribute: NSLayoutConstraint.Attribute.left, multiplier: 1, constant: 20)
         let checkViewConstraintY = JVLayoutConstraint(attribute: NSLayoutConstraint.Attribute.centerY, relatedBy: NSLayoutConstraint.Relation.equal, to: JVLayoutItem.privacy, attribute: NSLayoutConstraint.Attribute.centerY, multiplier: 1, constant: 0)
         let checkViewConstraintW = JVLayoutConstraint(attribute: NSLayoutConstraint.Attribute.width, relatedBy: NSLayoutConstraint.Relation.equal, to: JVLayoutItem.none, attribute: NSLayoutConstraint.Attribute.width, multiplier: 1, constant: checkViewWidth)
-        let checkViewConstraintH = JVLayoutConstraint(attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, to: JVLayoutItem.none, attribute: NSLayoutConstraint.Attribute.height, multiplier: 1, constant: checkViewHeight)
+        let checkViewConstraintH = JVLayoutConstraint(attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, to: JVLayoutItem.none, attribute: NSLayoutConstraint.Attribute.height, multiplier: 1, constant: checkViewWidth)
         return [checkViewConstraintX!, checkViewConstraintY!, checkViewConstraintW!, checkViewConstraintH!]
     }()
 
@@ -118,7 +116,6 @@ class AurorUIFactory {
         auroraUIConfiguration.logBtnConstraints = auroraLoginButtonConstraints
         auroraUIConfiguration.logBtnHorizontalConstraints = auroraUIConfiguration.logBtnConstraints
 
-        auroraUIConfiguration.checkViewHidden = true
         auroraUIConfiguration.uncheckedImg = XCAssets.Assets.Aurora.checkBoxUnSelected.image
         auroraUIConfiguration.checkedImg = XCAssets.Assets.Aurora.checkBoxSelected.image
         auroraUIConfiguration.checkViewConstraints = auroraCheckViewConstraints
