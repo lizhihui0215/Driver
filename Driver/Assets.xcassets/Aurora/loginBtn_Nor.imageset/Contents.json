@@ -5,12 +5,12 @@
       "scale" : "1x"
     },
     {
-      "filename" : "loginBtn_Nor@2x.png",
+      "filename" : "normal@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "loginBtn_Nor@3x.png",
+      "filename" : "normal@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

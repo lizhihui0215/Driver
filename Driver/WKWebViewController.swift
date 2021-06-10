@@ -52,12 +52,7 @@ class WKWebViewController: UIViewController {
 
         return userContentController
     }()
-
-    lazy var request: URLRequest = {
-        let request = URLRequest(url: app.webURL)
-        return request
-    }()
-
+   
     var wechatService: WechatService? {
         UIApplication.shared.service()
     }
@@ -68,6 +63,11 @@ class WKWebViewController: UIViewController {
         JVERIFICATIONService.customUI(with: auroraAuthUIConfiguration) { _ in
             // 自定义view, 加到customView上
         }
+    }
+    
+    func request(with url: URL) -> URLRequest {
+        let request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 60)
+        return request
     }
 
     override func viewDidLoad() {
@@ -92,7 +92,7 @@ class WKWebViewController: UIViewController {
     }
 
     private func setupWKWebView() {
-        webView.load(request)
+        webView.load(request(with: app.webURL.appendingPathComponent("?time=\(arc4random())")))
         webView.scrollView.showsVerticalScrollIndicator = false
         webView.scrollView.showsHorizontalScrollIndicator = false
         webView.navigationDelegate = self

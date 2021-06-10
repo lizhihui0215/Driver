@@ -73,7 +73,7 @@ class AurorUIFactory {
     }()
 
     lazy var auroraPrivacyViewConstraints: [JVLayoutConstraint] = {
-        let checkViewWidth = auroraUIConfiguration.uncheckedImg?.size.width ?? 10
+        let checkViewWidth: CGFloat = 50
         // 隐私
         let spacing = checkViewWidth + 20 + 5
         let privacyConstraintX = JVLayoutConstraint(attribute: NSLayoutConstraint.Attribute.left, relatedBy: NSLayoutConstraint.Relation.equal, to: JVLayoutItem.super, attribute: NSLayoutConstraint.Attribute.left, multiplier: 1, constant: spacing)
@@ -114,6 +114,7 @@ class AurorUIFactory {
         auroraUIConfiguration.sloganHorizontalConstraints = auroraUIConfiguration.sloganConstraints
         auroraUIConfiguration.logBtnImgs = auroraLoginButtonImages
         auroraUIConfiguration.logBtnConstraints = auroraLoginButtonConstraints
+        auroraUIConfiguration.logBtnText = ""
         auroraUIConfiguration.logBtnHorizontalConstraints = auroraUIConfiguration.logBtnConstraints
 
         auroraUIConfiguration.uncheckedImg = XCAssets.Assets.Aurora.checkBoxUnSelected.image
