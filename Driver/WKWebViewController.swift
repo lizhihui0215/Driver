@@ -9,6 +9,7 @@ import Gifu
 import PKHUD
 import UIKit
 import WebKit
+import Alamofire
 
 class WKWebViewController: UIViewController {
     @IBOutlet var webView: WKWebView!
@@ -77,8 +78,17 @@ class WKWebViewController: UIViewController {
         registerJavaScriptMethods()
         setupWKWebView()
         setupAuroraAuthrizationPage()
-        GIFHUD.shared.errorView.action = { [weak self] sender in
+        
+        NetworkReachabilityManager.default?.startListening{ [weak self] status in
             guard let `self` = self else { return }
+            switch status {
+            case .reachable: self.webView.reload()
+            default: break
+            }
+        }
+        
+        GIFHUD.shared.errorView.action = { [weak self] _ in
+            guard let self = self else { return }
             `self`.webView.reload()
         }
     }
@@ -160,6 +170,7 @@ class WKWebViewController: UIViewController {
 
     deinit {
         removeJavascriptMethods()
+        NetworkReachabilityManager.default?.stopListening()
     }
 }
 
