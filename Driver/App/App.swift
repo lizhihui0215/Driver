@@ -59,7 +59,7 @@ public final class App {
 
     var aurora: Aurora = .default
 
-    var webURL = URL(string: Constants.webURL)!
+    var webURL = Constants.webURL
 
     private var infoDictionary = Bundle.main.infoDictionary
 

@@ -52,7 +52,7 @@ class WKWebViewController: UIViewController {
 
         return userContentController
     }()
-   
+
     var wechatService: WechatService? {
         UIApplication.shared.service()
     }
@@ -64,8 +64,9 @@ class WKWebViewController: UIViewController {
             // 自定义view, 加到customView上
         }
     }
-    
-    func request(with url: URL) -> URLRequest {
+
+    func request(with urlString: String) -> URLRequest {
+        guard let url = URL(string: urlString) else { fatalError("url: \(urlString) are not support") }
         let request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 60)
         return request
     }
@@ -76,6 +77,10 @@ class WKWebViewController: UIViewController {
         registerJavaScriptMethods()
         setupWKWebView()
         setupAuroraAuthrizationPage()
+        GIFHUD.shared.errorView.action = { [weak self] sender in
+            guard let `self` = self else { return }
+            `self`.webView.reload()
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -92,7 +97,7 @@ class WKWebViewController: UIViewController {
     }
 
     private func setupWKWebView() {
-        webView.load(request(with: app.webURL.appendingPathComponent("?time=\(arc4random())")))
+        webView.load(request(with: app.webURL.appending("?time=\(arc4random())")))
         webView.scrollView.showsVerticalScrollIndicator = false
         webView.scrollView.showsHorizontalScrollIndicator = false
         webView.navigationDelegate = self
