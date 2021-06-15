@@ -58,15 +58,16 @@ class GIFHUD: UIViewController {
         override init(frame: CGRect) {
             super.init(frame: frame)
             addSubview(errorImageView)
-            errorImageView.addSubview(titleLabel)
-            errorImageView.addSubview(button)
+            errorImageView.isUserInteractionEnabled = true
+            addSubview(titleLabel)
+            addSubview(button)
             errorImageView.centerXAnchor ~ centerXAnchor
             errorImageView.centerYAnchor ~ centerYAnchor
             titleLabel.centerXAnchor ~ errorImageView.centerXAnchor
-            titleLabel.topAnchor ~ errorImageView.bottomAnchor + 20
+            titleLabel.topAnchor ~ errorImageView.bottomAnchor - 50
             button.centerXAnchor ~ errorImageView.centerXAnchor
-            button.topAnchor ~ titleLabel.topAnchor + 20
-            button.addTarget(self, action: #selector(Self.buttonTapped(_:)), for: .touchUpInside)
+            button.topAnchor ~ titleLabel.topAnchor + 40
+            button.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
         }
 
         @objc func buttonTapped(_ sender: UIButton) {
@@ -118,21 +119,21 @@ class GIFHUD: UIViewController {
         }
     }
 
-    func hideAll() {
+    private func hideAll() {
         hideError()
         hideLoading()
     }
 
-    func showError() {
+    private func showError() {
         view.addSubview(errorView)
         errorView.fillSuperview()
     }
 
-    func hideError() {
+    private func hideError() {
         errorView.removeFromSuperview()
     }
 
-    func showLoading() {
+    private func showLoading() {
         view.addSubview(imageView)
         imageView.widthAnchor ~ 250
         imageView.heightAnchor ~ 176
@@ -141,7 +142,7 @@ class GIFHUD: UIViewController {
         imageView.startAnimatingGIF()
     }
 
-    func hideLoading() {
+    private func hideLoading() {
         imageView.removeFromSuperview()
         imageView.stopAnimatingGIF()
     }

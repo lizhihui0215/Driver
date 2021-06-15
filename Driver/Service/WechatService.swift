@@ -36,9 +36,9 @@ class WechatService: NSObject, AppService {
         WXApi.registerApp(app.wechat.appId, universalLink: app.wechat.universalLinks)
 
         #if DEBUG
-            WXApi.checkUniversalLinkReady { step, result in
-                log.debug("step: \(step) \n result: \(result)")
-            }
+//            WXApi.checkUniversalLinkReady { step, result in
+//                log.debug("step: \(step) \n result: \(result)")
+//            }
         #endif
 
         return true

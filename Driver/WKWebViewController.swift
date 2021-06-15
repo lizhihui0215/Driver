@@ -5,11 +5,11 @@
 //  Created by lizhihui on 2021/5/21.
 //
 
+import Alamofire
 import Gifu
 import PKHUD
 import UIKit
 import WebKit
-import Alamofire
 
 class WKWebViewController: UIViewController {
     @IBOutlet var webView: WKWebView!
@@ -78,15 +78,15 @@ class WKWebViewController: UIViewController {
         registerJavaScriptMethods()
         setupWKWebView()
         setupAuroraAuthrizationPage()
-        
-        NetworkReachabilityManager.default?.startListening{ [weak self] status in
-            guard let `self` = self else { return }
+
+        NetworkReachabilityManager.default?.startListening { [weak self] status in
+            guard let self = self else { return }
             switch status {
-            case .reachable: self.webView.reload()
-            default: break
+            case .reachable: self.reloadWebView()
+            default: GIFHUD.shared.show(.error)
             }
         }
-        
+
         GIFHUD.shared.errorView.action = { [weak self] _ in
             guard let self = self else { return }
             `self`.webView.reload()
@@ -106,8 +106,12 @@ class WKWebViewController: UIViewController {
         }
     }
 
-    private func setupWKWebView() {
+    private func reloadWebView() {
         webView.load(request(with: app.webURL.appending("?time=\(arc4random())")))
+    }
+
+    private func setupWKWebView() {
+        reloadWebView()
         webView.scrollView.showsVerticalScrollIndicator = false
         webView.scrollView.showsHorizontalScrollIndicator = false
         webView.navigationDelegate = self
