@@ -89,7 +89,7 @@ class WKWebViewController: UIViewController {
 
         GIFHUD.shared.errorView.action = { [weak self] _ in
             guard let self = self else { return }
-            `self`.webView.reload()
+            self.reloadWebView()
         }
     }
 
